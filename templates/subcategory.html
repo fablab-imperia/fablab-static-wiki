@@ -2,6 +2,8 @@
 {% block content %}
 <h1>{{section.title}}</h1>
 <p>{{section.description}}</p>
+{{section.content | safe}}
+<hr>
 <h2>Sottocategorie:</h2>
 <div class="row">
     {% for subsection in section.subsections %}
