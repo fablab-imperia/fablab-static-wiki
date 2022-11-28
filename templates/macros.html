@@ -1,0 +1,7 @@
+{% macro card(title, description, url) %}
+<div class="card">
+    <h3>{{title  | capitalize}}</h3>
+    <p>{{description}}</p>
+    <a href="{{url}}" class="button">Leggi</a>
+</div>
+{% endmacro input %}

@@ -1,0 +1,93 @@
+=== Benvenuti! ===
+Su questo Wiki i soci del Fablab condividono idee, appunti, progetti, procedure e parametri di lavorazione attinenti con le attività del Fablab Imperia.
+
+Tutti i principali progetti, le guide e i tutorial realizzati dai soci del FabLab Imperia, sono condivisi su questo Wiki e rilasciati con [https://creativecommons.org/licenses/by-sa/4.0/deed.it licenza Creative Commons BY-SA v.4.0], salvo dove diversamente specificato.
+
+= Cos’è un Fablab? =
+Un Fablab è un laboratorio condiviso di sperimentazione e fabbricazione digitale, con [http://osm.org/go/xXaeet~E-?m= sede ad Imperia], è un luogo di incontro e condivisione di conoscenze, idee e attrezzature dove è possibile creare (quasi) qualsiasi cosa. I Fablab di tutto il mondo compongono una  [https://www.fablabs.io/map rete internazionale dei Fablab] in contatto tra loro, basati sul modello originale del laboratorio “For bits and atoms” del M.I.T. di Boston (USA).
+
+Per maggiori informazioni, per conoscere le ultime novità, gli eventi in programma e per i contatti, visita il nostro [http://www.fablabimperia.org sito web].
+__NOTOC__     
+
+{| style="border:0; margin: 0; width: 100%; border-spacing: 10px;" role="presentation"
+| style="vertical-align: top; width:400px" |
+<div class="mainpage_hubtitle">'''Contenuti del Wiki'''</div>
+<div class="mainpage_boxcontents">
+
+== Guide e tutorial per cominciare ==
+<dynamicpagelist>
+category=Tutorial
+notcategory=Stubs
+shownamespace = false
+</dynamicpagelist>
+
+<br /><gallery mode="packed-hover" heights="100">
+Image:Volantino_tutorial_saldatura.jpg|''[[Saldare da zero|Saldare da zero]]'' (Guida)
+Image:Display_7_segmenti_test.jpg|''[[Display_a_7_segmenti|Display_a_7_segmenti]]'' (Tutorial)
+Image:Trapano_a_colonna_fervi.jpg|''[[Il_Trapano_a_colonna|Il_Trapano_a_colonna]]'' (Guida)
+Image:5 08 01 16 4 19 26.png|''[[Guida_all'uso_di_Coppercam|Guida_all'uso_di_Coppercam]]'' (Tutorial)
+Image:Profilato_a_T.jpg|''[[Fresare_profilati_in_alluminio_a_T|Fresare_profilati_in_alluminio_a_T]]'' (Tutorial)
+Image:Labirinto_biglie.jpg|''[[Fresare_un_Labirinto_per_biglie|Fresare_un_Labirinto_per_biglie]]'' (Tutorial)
+Image:Pcb_serratura.jpg|''[[Realizzare_PCB_con_una_fresatrice_CNC|Labirinto_per_biglie]]'' (Tutorial)
+</gallery>
+
+== Progetti ==
+<dynamicpagelist>
+category=Progetti
+notcategory=Stubs
+notcategory=Tutorial
+shownamespace = false
+</dynamicpagelist>
+<br />
+<gallery mode="packed-hover" heights="100">
+Image:Nanino_working.jpg|''[[Nanino_-_l'Arduino_fresabile|Nanino_-_l'Arduino_fresabile]]'' (Guida)
+Image:Incisione_mixer.jpg|''[[Mascherina_per_mixer|Mascherina_per_mixer]]'' (Tutorial)
+</gallery>
+
+== [[:Category:Appunti|Appunti]] dei soci ==
+Negli appunti annotiamo "dritte", informazioni e links utili su diversi argomenti. Pertanto le pagine di questa categoria potrebbero essere incomplete
+
+=== Ultimi 10 appunti creati dai soci: ===
+<dynamicpagelist>
+category=Appunti
+namespace=(Main)
+notcategory=Stubs
+ordermethod = created
+count=10
+shownamespace = true
+</dynamicpagelist>
+[[:Category:Appunti|'''Mostra tutti gli appunti''']]
+ 
+==== Categorie degli Appunti: ====
+ <dynamicpagelist>
+             category=Appunti
+             namespace=Category
+             notcategory=Stubs
+             shownamespace = false
+             mode = inline
+             ordermethod = sortkey
+             </dynamicpagelist>
+
+== Altro materiale utile ==
+*[[Tips&Tricks]] Raccolta di vari links e "dritte" utili 
+
+
+== Ultimi 10 file caricati ==
+<dynamicpagelist>
+count=10
+namespace=file
+addfirstcategorydate=ymd
+imagewidth=70
+galleryshowfilesize=yes
+galleryshowfilename=yes
+imagesperrow=5
+mode=gallery
+</dynamicpagelist>
+
+</div>
+| style="vertical-align: top;width:500px" |
+<div class="mainpage_hubtitle">'''Ultime novità'''</div>
+<div class="mainpage_boxcontents" align="center">
+{{#widget:Facebook Page Plugin|profile=https://www.facebook.com/fablabimperia/|height=2000|tabs=timeline,events|width=500}}
+</div>
+|}

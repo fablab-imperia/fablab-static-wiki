@@ -1,5 +1,13 @@
 <header>
-    <a href="#" class="logo">Logo</a>
-    <a href="#" class="button">Home</a>
-    <button>Download</button>
+    <a href="/" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    {#
+    {% set main_sec = get_section(path="_index.md") %}
+    {% for subsection in main_sec.subsections %}
+        {% set sec = get_section(path=subsection) %}
+        <a href="{{sec.permalink}}" class="button">{{sec.title}}</a>
+    {% endfor %}
+    #}
 </header>

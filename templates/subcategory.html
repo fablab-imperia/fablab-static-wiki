@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{section.title}}</h1>
+<p>{{section.description}}</p>
+<h2>Sottocategorie:</h2>
+<div class="row">
+    {% for subsection in section.subsections %}
+    {% set sec = get_section(path=subsection) %}
+    {{macros::card(
+        title=sec.title,
+        description=sec.description,
+        url=sec.permalink
+    )}}
+    {% endfor %}
+</div>
+
+<h2>Pagine:</h2>
+<div class="row">
+    {% for page in section.pages %}
+    {{macros::card(
+        title=page.title,
+        description=page.description,
+        url=page.permalink
+    )}}
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

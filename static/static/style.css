@@ -1,0 +1,18 @@
+code
+{
+    background-color: #2b303b;
+    color: #2b303b;
+    border-radius: 0;
+}
+
+.toc-container
+{
+    padding: 0.3rem;
+    border: black 1px solid;
+    max-width: 100%;
+}
+@media screen and (min-width: 480px) {
+    .toc-container {
+        max-width: 50%;
+    }
+}
