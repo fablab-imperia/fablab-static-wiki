@@ -1,9 +1,8 @@
 +++
 title="Guida al trapano a colonna"
+extra.anteprima="trapano_a_colonna_1.jpg"
 +++
-{{\#eimage:<http://i.imgur.com/YyKNkg1.jpg%7Clink=http://i.imgur.com/YyKNkg1.jpg%7C480x320px%7Cthumb>\|<small>Il
-logo del Fablab è aggiunto per scoraggiare l\'uso delle immagini sui
-siti di vendite online.</small>}} Questa guida è derivata
+Questa guida è derivata
 dall\'originale [guida all\'uso del trapano Valex
 TR13R](http://www.funadium.com/valextr13r.php?hl=en) realizzata Marco
 Bernardini [(CC) BY - NC - SA
@@ -12,7 +11,6 @@ Fervi 0011 e il Valex TR13R molto simili, se non identici, riportiamo la
 guida di Marco nel nostro Wiki, corredata da foto realizzate sul nostro
 modello. (Il watermark del logo del Fablab Imperia è inserito in alcune
 foto al fine di scoraggiarne l\'uso sui siti di vendite online.)
-\_\_TOC\_\_
 
 Descrizione
 -----------
@@ -37,8 +35,8 @@ migliaia di dollari, con macchine precise al decimillesimo di millimetro
 e officine meglio dotate di quelle della Fiat, per realizzare
 principalmente delle biro in legno tornito e dei tappi per bottiglie...
 Io mi accontento semplicemente di fare un po\' di buchi senza spezzare
-le punte o bruciare i trapani.\
-\
+le punte o bruciare i trapani.
+
 Trovandomi nella necessità di fare dei fori un po\' più precisi del
 solito in vari oggetti più o meno rotondi sono stato tentato di
 costruirmi un marchingegno al quale attaccare il trapano a mano ma,
@@ -56,9 +54,14 @@ fresatrice</span> (una fresatrice è studiata specificatamente per
 sopportare carichi laterali e girare a velocità molto alte), che non ha
 una potenza esagerata, e che non potete attendervi lavori precisi al
 decimo di millimetro. Però è sicuramente più affidabile e più pratico di
-un trapano a mano libera.\
-{{\#eimage:<http://i.imgur.com/qz15xo4l.jpg%7C410x579px%7Cthumb%7Clink=http://i.imgur.com/qz15xo4.jpg%7CVista>
-del lato sinistro con il centimetro per regolare la profondità}} Ecco un
+un trapano a mano libera.
+{{
+    immagine(
+        url="trapano_a_colonna_2.jpg",
+        didascalia="Vista del lato sinistro con il centimetro per regolare la profondità"
+    )
+}}
+Ecco un
 riassunto delle principali specifiche:
 <span style="color: #ff3333;">(dati del Valex, da verificare)</span>\
 * potenza nominale: <span style="font-weight: bold;">350 W</span>\
@@ -136,8 +139,12 @@ molti di essi.
     plastica della mascherina di protezione se si esercita una pressione
     eccessiva\
 
-{{\#eimage:<http://i.imgur.com/hbkXBiZ.jpg%7C410x579px%7Clink=http://i.imgur.com/hbkXBiZl.jpg%7Cthumb%7CVista>
-del lato destro con le leve di profondità}}
+{{
+    immagine(
+        url="trapano_a_colonna_3.jpg",
+        didascalia="Vista del lato destro con le leve di profondità"
+    )
+}}
 
 Utensili necessari per intervenire sul trapano
 ----------------------------------------------
@@ -178,10 +185,15 @@ Servono inoltre:
 AVVERTENZE
 ----------
 
-{{\#eimage:<http://i.imgur.com/VjvVnnml.jpg%7C410x579px%7Cthumb%7Clink=http://i.imgur.com/VjvVnnml.jpg%7CPulsanti>
-di avvio e arresto, con spegnimento di emergenza.\
-Per aprire il coperchio bisogna far scorrere il bottone rosso verso
-l\'alto}} Ecco altre avvertenze pratiche basate sulla mia esperienza
+{{
+    immagine(
+        url="trapano_a_colonna_4.jpg",
+        didascalia="Pulsanti di avvio e arresto, con spegnimento di emergenza.<br>Per aprire il coperchio
+        bisogna far scorrere il bottono rosso verso l'alto"
+    )
+}}
+
+Ecco altre avvertenze pratiche basate sulla mia esperienza
 personale. Non essendo un metalmeccanico cerco sempre di operare con la
 massima cautela, e credo che alcuni di questi suggerimenti potranno
 tornarvi utili:
@@ -321,20 +333,21 @@ qualità. Attenzione comunque alle misure, i paesi anglosassoni per
 default usano i pollici. Ecco alcune chiavi di ricerca utili, che vi
 permetteranno di risparmiare tempo (e denaro).
 
-  **italiano**                  **inglese**                          **tedesco**           **francese**            **note**
-  ----------------------------- ------------------------------------ --------------------- ----------------------- -----------------------------------------------------------------------------------------------------------------------------------------
-  trapano colonna               drill presspillar drill              ständerbohrmaschine   perceuseà/sur colonne   il pillar drill solitamente è da pavimento
-  trapano tavolotrapano banco   bench drill                          tischbohrmaschine     perceusede table        poco comune in francese
-  mandrino                      chuck                                                      mandrin                 
-  punta trapano                 drill bit                            bohrer                foret                   
-  alesatore                     reamer                               reibahle              alésoir                 
-  svasatore                     countersink                          senker                fraise àchanfreiner     
-  fresa                         endmill                              fräse                 fraise                  in italiano aggiungere \"-unghia -unghie -nail -nails -manicure\" per evitare di avere risultati inutili relativi alle frese per unghie
-  morsa                         vice (in UK)vise (in USA)            schraubstock          étau                    
-  morsetto                      clamp                                holz                  bois                    
-  alluminio                     aluminium (in UK)aluminum (in USA)   aluminium             aluminium               
-  acciaio                       steel                                stahl                 acier                   
-  inox                          stainless                            inoxrostfrei          inox                    
+|   italiano    |   inglese |   tedesco |   francese     |   note             |
+|---------------|-----------|-----------|----------------|--------------------|
+|trapano a colonna|drill press/pillar drill|ständerbohrmaschine|perceuseà/sur colonne|il pillar drill solitamente è da pavimento|
+|trapano tavolotrapano banco |bench drill |tischbohrmaschine|perceusede table|poco comune in francese |
+|mandrino       |chuck      |           |mandrin        |                   |
+|punta trapano  |drill bit  |bohrer     |foret          |                   |
+|alesatore      | reamer    | reibahle  |alésoir        |                   |
+|svasatore      |countersink|senker     |fraise àchanfreiner|               |
+|fresa          |endmill    |fräse      |fraise         |in italiano aggiungere "-unghia -unghie -nail -nails -manicure" per evitare di avere risultati inutili relativi alle frese per unghie |
+|morsa          |vice(in UK), vise(in USA) |schraubstock|étau|              |
+|morsetto       |clamp      |holz       |bois           |                   |
+|alluminio      |aluminium(in UK), aluminum(in USA)|aluminium|aluminium|    |
+|acciaio        |steel      |stahl      |acier          |                   |
+|inox           |stainless  |inoxrostfrei|inox          |                   |
+
 
 Consultare eBay vi permetterà anche di prendere dimestichezza con le
 varie marche di attrezzi e accessori e di capire quali possono essere
@@ -355,9 +368,13 @@ pensate a quanto risparmierete rispetto a quei ridicoli corsi dove
 pagate fior di euri per imparare che il cane è sotto il tavolo e il
 gatto è sulla sedia.
 
-{{\#eimage:<http://i.imgur.com/0L4d0rMl.jpg%7C410x579px%7Cthumb%7Clink=http://i.imgur.com/0L4d0rM.jpg%7CIl>
-dispositivo di sblocco del motore per allentare la cinghia, sul lato
-destro}}
+{{
+    immagine(
+        url="trapano_a_colonna_5.jpg",
+        didascalia="Il dispositivo di sblocco del motore per allentare la cinghia, sul lato destro"
+    )
+}}
+
 
 ### Smontare le leve di discesa
 
@@ -380,12 +397,19 @@ possono essere utili, anche se si tratta di quegli attrezzi che si usano
 ben poche volte nella vita, ma vi avanzeranno di dover sostituire un
 mandrino distrutto a martellate.
 
-\
-{{\#eimage:<http://i.imgur.com/1eWD389l.jpg%7C410x579px%7Cthumb%7Clink=http://i.imgur.com/1eWD389.jpg%7CLa>
-cinghia di trasmissione regolabile a mano}}
-{{\#eimage:<http://i.imgur.com/p4c8fyGl.jpg%7C410x579px%7Cthumb%7Clink=http://i.imgur.com/p4c8fyG.jpg%7CSchema>
-delle posizioni della cinghia sulle pulegge e relative velocità di
-rotazione del mandrino}}
+{{
+    immagine(
+        url="trapano_a_colonna_6.jpg",
+        didascalia="La cinchia di trasmissione regolabile a mano"
+    )
+}}
+{{
+    immagine(
+        url="trapano_a_colonna_7.jpg",
+        didascalia="Schema delle posizioni della cinghia sulle pulegge e relative velocità di rotazione del mandrino"
+    )
+}}
+
 
 ### Regolare la cinghia di trasmissione
 
@@ -409,11 +433,16 @@ velocità sostenuta).\
 <span style="font-weight: bold;">Non provateci</span> con il metallo: la
 sollecitazione laterale alla quale sarebbe sottoposto l\'albero del
 mandrino sarebbe eccessiva, e cambiare i cuscinetti non è una cosa
-semplice, anche se su eBay si trovano a prezzi contenuti.\
-=== Realizzare una guida per i pezzi da forare ===
-{{\#eimage:<http://i.imgur.com/6meOJSR.jpg%7C320x280px%7Cthumb%7Clink=https://www.flickr.com/photos/funadium/4150603941/%7CUna>
-semplice guida peri pezzi da forare. <small>\
-Credits [funadium.com](http://www.funadium.com/valextr13r.php)</small>}}
+semplice, anche se su eBay si trovano a prezzi contenuti.
+
+### Realizzare una guida per i pezzi da forare
+{{
+    immagine(
+        url="trapano_a_colonna_8.jpg",
+        didascalia="Una emplice guida peri pezzi da forare. (Credits: clicca sull'immagine )",
+        link="http://www.funadium.com/valextr13r.php"
+    )
+}}
 Nel caso in cui si debbano fare più fori sempre alla medesima distanza
 da un lato del pezzo è opportuno disporre di una guida (in inglese
 \"fence\", cioè staccionata, recinzione) contro la quale appoggiare i
@@ -428,10 +457,13 @@ suggerisco di usare un profilato metallico a U, che sia un più solido di
 quelli di latta usati per posare le lastre di cartongesso.
 
 ### Bucare cose alte
-
-{{\#eimage:<http://i.imgur.com/kMU5NIj.jpg%7C320x280px%7Cthumb%7Clink=http://www.flickr.com/photos/funadium/4150603933/%7CForare>
-un profilo a C alto come la corsa del trapano. <small>\
-Credits [funadium.com](http://www.funadium.com/valextr13r.php)</small>}}
+{{
+    immagine(
+        url="trapano_a_colonna_9.jpg",
+        didascalia="Forare un profilo a C alto come la corsa del trapano. (Credits: clicca sull'immagine )",
+        link="http://www.funadium.com/valextr13r.php"
+    )
+}}
 Se proprio dovete bucare delle cose che non passano tra il mandrino e la
 base non è un problema: basta allentare i due grani che fermano la testa
 sulla colonna e ruotarla. Attenzione che la base sia molto ben bloccata
@@ -501,12 +533,15 @@ metà se comprato altrove chiamandolo \"countersink\".\
 Con uno svasatore da 13 mm si fa praticamente quasi tutto, compresi i
 diametri inferiori (basta affondarlo di meno). Attenzione a prenderne
 uno adatto al materiale che dovete lavorare.\
-\
-== Modifiche ==
-{{\#eimage:<http://i.imgur.com/DxbfGT7.jpg%7C320x280px%7Cthumb%7Clink=http://www.flickr.com/photos/funadium/4150603949/%7CUn>
-collare Fischer per tubi da 1½″ usato come fermo verticale per la tavola
-scorrevole <small>\
-Credits [funadium.com](http://www.funadium.com/valextr13r.php)</small>}}
+
+## Modifiche
+{{
+    immagine(
+        url="trapano_a_colonna_10.jpg",
+        didascalia="Un collare Fischer per tubi da 1½″ usato come fermo verticale per la tavola scorrevole. (Credits: clicca sull'immagine )",
+        link="http://www.funadium.com/valextr13r.php"
+    )
+}}
 
 ### Blocco verticale della tavola scorrevole
 
@@ -526,10 +561,14 @@ fissato il tassello, che può essere impiegato per aggiungere altri
 accessori utilizzando un semplice bullone da 8.
 
 ### Nuova mascherina di protezione
+{{
+    immagine(
+        url="trapano_a_colonna_11.jpg",
+        didascalia="La nuova mascherina di protezione. (Credits: clicca sull'immagine )",
+        link="http://www.funadium.com/valextr13r.php"
+    )
+}}
 
-{{\#eimage:<http://i.imgur.com/DWeLcdJ.jpg%7C320x280px%7Cthumb%7Clink=http://www.flickr.com/photos/funadium/4150603943/%7CLa>
-nuova mascherina di protezione <small>\
-Credits [funadium.com](http://www.funadium.com/valextr13r.php)</small>}}
 Questa idea non è mia, l\'ho copiata dal sito
 [Micro-Machine-Shop.com](http://www.micro-machine-shop.com/rf_mill_accessories.htm#Safety_Shields)
 che, come dicono certe guide turistiche, \"vale il viaggio\".
@@ -583,11 +622,13 @@ da 12 punte per 2,99 € (che vi sconsiglio caldamente):
 -   M16: 14,00 mm\
 
 ### Accessori (quasi) inutili
-
-{{\#eimage:<http://i.imgur.com/mpJSYTD.jpg%7C320x280px%7Cthumb%7Clink=http://www.flickr.com/photos/funadium/4150603945/%7CUna>
-punta da 12 mm non lascia molto spazio disponibile per accessori
-esoterici. <small>\
-Credits [funadium.com](http://www.funadium.com/valextr13r.php)</small>}}
+{{
+    immagine(
+        url="trapano_a_colonna_12.jpg",
+        didascalia="Una punta da 12 mm non lascia molto spazio disponibile per accessori esoterici. (Credits: clicca sull'immagine )",
+        link="http://www.funadium.com/valextr13r.php"
+    )
+}}
 
 -   Una volta acquistato il trapano non lasciatevi travolgere
     dall\'ebrezza consumistica: molti accessori in vendita sono quasi

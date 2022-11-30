@@ -1,7 +1,7 @@
 +++
 title="Sensore pressione barometrica BMP085"
+extra.anteprima="sensore_pressione_barometrica.jpg"
 +++
-<http://i.imgur.com/iHW0ElLm.jpg>
 
 Sensore di pressione barometrica e temperatura BMP085\
 

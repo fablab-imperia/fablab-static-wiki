@@ -71,4 +71,3 @@ piu\' complessa, sicuramente molto piu complessa rispetto alle XBee.
 ### Altra libreria
 
 <http://airspayce.com/mikem/arduino/NRF24/>
-[Categoria:Appunti](Categoria:Appunti "wikilink")

@@ -1,5 +1,6 @@
 +++
 title="Raspberry Pi"
+extra.anteprima="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Raspberry_Pi_4_Model_B_-_Side.jpg/320px-Raspberry_Pi_4_Model_B_-_Side.jpg"
 +++
 ### Info Varie
 

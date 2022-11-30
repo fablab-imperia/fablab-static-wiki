@@ -1,5 +1,6 @@
 +++
 title="Sensore umidita DHT11 DHT22"
+extra.anteprima="sensore_umidita.jpg"
 +++
 Sensore DHT11 è economico ma abbastanza impreciso, soprattutto sulla
 temperatura.\
@@ -8,8 +9,6 @@ Il DHT22 è molto meglio.
 Conviene acquistare il sensore incluso nell\'apposito micro-modulo
 visibile in foto, visto che richiede alcuni componenti elettronici per
 funzionare.
-
-<imgur>YCbuAv8m.jpg</imgur>\
 
 ### Links utili
 

@@ -1,7 +1,7 @@
 +++
 title="Sensore temperatura DS18B20"
+extra.anteprima="sensore_temperatura.png"
 +++
-\_\_TOC\_\_ <imgur>1ujFi4B.png</imgur>
 
 ### Descrizione
 

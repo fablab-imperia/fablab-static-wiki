@@ -1,7 +1,7 @@
 +++
 title="Sensore magnetico"
+extra.anteprima="sensore_magnetico_1.jpg"
 +++
-{{\#eimage:<http://i.imgur.com/cGcOxoH.jpg%7Calt=>\"!!TITLE!!\"\|320x280px\|thumb\|link=<http://i.imgur.com/cGcOxoH.jpg%7Cinline>}}
 
 ### Descrizione
 
@@ -18,6 +18,9 @@ pin sono così disposti:\
 La Vcc minima in ingresso: 4,5V.\
 [Qui il
 datasheet](http://www.fablabimperia.wiki/w/images/9/96/Ah443.pdf)
-
-{{\#eimage:<http://i.imgur.com/Vz7GH0Z.jpg%7Calt=>\"!!TITLE!!\"\|640x480px\|thumb\|link=<http://i.imgur.com/Vz7GH0Z.jpg%7Cleft%7CTest>
-di funzionamento con un calamita per hard disk}}
+{{
+    immagine(
+        url="sensore_magnetico_2.jpg",
+        didascalia="Test di funzionamento con un calamita per hard disk"
+    )
+}}

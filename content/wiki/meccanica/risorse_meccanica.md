@@ -28,7 +28,7 @@ meccanica e alle attrezzature da utilizzare:
         pre-fori](http://www.tecnosald.com/media/utensili/TABELLE)\
     -   [Elenco dei diversi tipi di maschi per filettare (con
         immagini)](http://www.newmantools.com/taps/styles.htm)\
--   [Sito stracolmoÂ di consigli utili per i lavori
+-   [Sito stracolmo di consigli utili per i lavori
     meccanici](http://www.frets.com/HomeShopTech/hstpages.html)\
 
 ### Video
