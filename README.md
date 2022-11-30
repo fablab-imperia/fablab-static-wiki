@@ -12,6 +12,7 @@ alcuni link immmagini sono da correggere con notazione markdown
 ## Scaricare
 ```
 git clone https://github.com/fablab-imperia/fablab-static-wiki.git
+cd fablab-static-wiki
 git submodule init
 git submodule update
 ```
