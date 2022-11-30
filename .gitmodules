@@ -1,0 +1,3 @@
+[submodule "static/wiki/static/forkawesome"]
+	path = static/wiki/static/forkawesome
+	url = https://github.com/ForkAwesome/Fork-Awesome.git
