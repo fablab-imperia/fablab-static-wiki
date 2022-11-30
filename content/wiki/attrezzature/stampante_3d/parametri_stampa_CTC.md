@@ -1,0 +1,67 @@
++++
+title="Parametri di stampa CTC"
++++
+Qui di seguito potete trovare le schermate con i parametri di stampa
+della CTC una per una
+{{
+    immagine(
+        url="stampa_CTC_layer.png",
+        didascalia="LAYER"
+    )
+}}
+
+{{
+    immagine(
+        url="stampa_CTC_extruder.png",
+        didascalia="EXTRUDER"
+    )
+}}
+
+{{
+    immagine(
+        url="stampa_CTC_infill.png",
+        didascalia="INFILL"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_cooling.png",
+        didascalia="COOLING"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_temperature.png",
+        didascalia="TEMPERATURE"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_support.png",
+        didascalia="support"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_additions.png",
+        didascalia="additions"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_speed.png",
+        didascalia="Speed"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_x3g.png",
+        didascalia="X3G"
+    )
+}}
+{{
+    immagine(
+        url="stampa_CTC_advanced.png",
+        didascalia="Advanced"
+    )
+}}

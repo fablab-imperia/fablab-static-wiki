@@ -1,0 +1,24 @@
+{% macro card(title, description, url, thumbnail="") %}
+<div class="card">
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+    {{ self::immagine(url=thumbnail) }}
+    <a href="{{url}}" class="button">Leggi</a>
+</div>
+{% endmacro input %}
+
+{% macro immagine(url, didascalia="") %}
+{% if url %}
+<figure>
+    {% if not url is starting_with("http") %}
+        {% set url="/wiki/immagini/"~url %}
+    {% endif %}
+
+    <img src="{{url}}"/>
+    
+    {% if didascalia %}
+    <figcaption>{{didascalia}}</figcaption>
+    {% endif %}
+</figure>
+{% endif %}
+{% endmacro immagine %}

@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>{{page.title | capitalize}}</h1>
-<p>{{page.description}}</p>
-<hr>
-{% include "toc.html" %}
-{{ page.content | safe }}
-{% endblock content %}

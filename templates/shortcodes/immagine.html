@@ -1,0 +1,18 @@
+
+<figure>
+    {% if not url is starting_with("http") %}
+        {% set url="/wiki/immagini/"~url %}
+    {% endif %}
+
+    {% if link %}
+    <a href="{{link}}">
+        <img src="{{url}}"/>
+    </a>
+    {% else %}
+    <img src="{{url}}"/>
+    {% endif %}
+    
+    {% if didascalia %}
+    <figcaption>{{didascalia}}</figcaption>
+    {% endif %}
+</figure>

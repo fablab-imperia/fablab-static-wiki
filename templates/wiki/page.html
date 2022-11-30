@@ -1,0 +1,27 @@
+{% extends "wiki/base.html" %}
+{% block content %}
+<h1>{{page.title}}</h1>
+<div class="row">
+    {% if page.description %}
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <p>{{page.description}}</p>
+    </div>
+    {% endif %}
+    {% if page.extra.anteprima %}
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        {% if page.extra.didascalia_anteprima %}
+        {{ macros::immagine(url=page.extra.anteprima, didascalia=page.extra.didascalia_anteprima) }}
+        {% else %}
+        {{ macros::immagine(url=page.extra.anteprima) }}
+        {% endif %}
+        
+
+    </div>
+    {% endif %}
+</div>
+
+
+<hr>
+{% include "wiki/toc.html" %}
+{{ page.content | safe }}
+{% endblock content %}
