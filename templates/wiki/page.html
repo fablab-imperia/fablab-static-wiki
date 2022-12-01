@@ -9,13 +9,13 @@
     {% endif %}
     {% if page.extra.anteprima %}
     <div class="col-sm-12 col-md-6 col-lg-4">
-        {% if page.extra.didascalia_anteprima %}
-        {{ macros::immagine(url=page.extra.anteprima, didascalia=page.extra.didascalia_anteprima) }}
-        {% else %}
-        {{ macros::immagine(url=page.extra.anteprima) }}
-        {% endif %}
-        
-
+        <div class="contenitore_anteprima">
+            {% if page.extra.didascalia_anteprima %}
+            {{ macros::immagine(url=page.extra.anteprima, didascalia=page.extra.didascalia_anteprima) }}
+            {% else %}
+            {{ macros::immagine(url=page.extra.anteprima) }}
+            {% endif %}
+        </div>
     </div>
     {% endif %}
 </div>
@@ -23,5 +23,8 @@
 
 <hr>
 {% include "wiki/toc.html" %}
-{{ page.content | safe }}
+<div class="content">
+    {{ page.content | replace(from="<table>",to="<table class='page-table'>") | safe }}
+</div>
+
 {% endblock content %}

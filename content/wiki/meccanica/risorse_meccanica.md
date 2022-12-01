@@ -8,7 +8,7 @@ meccanica e alle attrezzature da utilizzare:
 
 -   [Manuale del Trapano a colonna Fervi
     0011](https://drive.google.com/file/d/0Bwq4TZpBPcxLN3FQOHFxXzBlNjg/view?usp=sharing)
--   [Guida all\'uso del trapano a colonna](@/wiki/attrezzature/trapano_a_colonna/guida_trapano_a_colonna.md)
+-   [Guida all\'uso del trapano a colonna](@/wiki/attrezzature/guida_trapano_a_colonna.md)
 -   \[Consigli sulla scelta e sulla conservazione delle punte per il
     trapano a colonna\]
 

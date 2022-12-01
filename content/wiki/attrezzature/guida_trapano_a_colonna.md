@@ -188,7 +188,7 @@ AVVERTENZE
 {{
     immagine(
         url="trapano_a_colonna_4.jpg",
-        didascalia="Pulsanti di avvio e arresto, con spegnimento di emergenza.<br>Per aprire il coperchio
+        didascalia="Pulsanti di avvio e arresto, con spegnimento di emergenza. Per aprire il coperchio
         bisogna far scorrere il bottono rosso verso l'alto"
     )
 }}

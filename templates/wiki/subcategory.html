@@ -2,7 +2,9 @@
 {% block content %}
 <h1>{{section.title}}</h1>
 <p>{{section.description}}</p>
-{{section.content | safe}}
+<div class="content">
+    {{ section.content | safe }}
+</div>
 <hr>
 {% if section.subsections %}
 <h2>Sottocategorie:</h2>

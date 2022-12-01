@@ -3,7 +3,10 @@
     <h3>{{title}}</h3>
     <p>{{description}}</p>
     {{ self::immagine(url=thumbnail) }}
-    <a href="{{url}}" class="button">Leggi</a>
+    <div class="card-button-container">
+        <a href="{{url}}" class="card-button button primary">Leggi</a>
+    </div>
+    
 </div>
 {% endmacro input %}
 

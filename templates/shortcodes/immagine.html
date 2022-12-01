@@ -1,4 +1,3 @@
-
 <figure>
     {% if not url is starting_with("http") %}
         {% set url="/wiki/immagini/"~url %}
@@ -9,7 +8,9 @@
         <img src="{{url}}"/>
     </a>
     {% else %}
-    <img src="{{url}}"/>
+    <a href="{{url}}">
+        <img src="{{url}}"/>
+    </a>
     {% endif %}
     
     {% if didascalia %}
