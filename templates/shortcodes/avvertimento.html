@@ -1,0 +1,43 @@
+{#
+Genera una casella di avviso.
+
+i parametri in ingresso sono:
+livello: numero intero
+msg: stringa, il messaggio da mostrare
+
+il livello dell'avvertimento corrisponde a:
+0 → semplice suggerimento
+1 → promemoria
+2 → avvertimento standard
+3 → passaggio pericoloso, molto importante!
+#}
+
+{% if livello==0 %}
+    {% set warning_class="" %}
+    {% set icon="magic" %}
+    {% set titolo="Suggerimento" %}
+{% elif livello==1 %}
+    {% set warning_class="" %}
+    {% set icon="info-circle" %}
+    {% set titolo="Promemoria" %}
+{% elif livello==2 %}
+    {% set warning_class="warning" %}
+    {% set icon="exclamation-circle" %}
+    {% set titolo="Attenzione" %}
+{% else %}
+    {% set warning_class="error" %}
+    {% set icon="exclamation-triangle" %}
+    {% set titolo="Importante!" %}
+{% endif %}
+<div class="card large {{warning_class}}">
+    <section>
+        <h3>
+            <i class="fa fa-{{icon}}"></i>
+            &nbsp;
+            {{titolo}}
+        </h3>
+        <p>
+            {{msg | markdown | safe}}
+        </p>
+    </section>
+</div>

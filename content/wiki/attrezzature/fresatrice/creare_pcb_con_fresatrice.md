@@ -37,6 +37,16 @@ per non disperdere nell\'aria le polveri di vetronite che possono essere
 pericolose per la salute.**\
 \
 
+{{
+    avvertimento(
+        livello=3,
+        msg="Le operazioni descritte in questa guida implicano l'esecuzione di operazioni su macchine e dispositivi sotto tensione e con organi in movimento potenzialmente pericolosi.
+
+È assolutamente necessario prestare la massima attenzione sia durante la preparazione che l'esecuzione delle lavorazioni, seguire le raccomandazioni di sicurezza del Fablab, mantenere una postazione di lavoro ordinata, e indossare i dispositivi di protezione personali dove richiesto.
+Inoltre ricordiamo che sulla fresatrice e sul pc di controllo è ammesso a lavorare solo 1 operatore alla volta"
+    )
+}}
+
 Requisiti
 ---------
 
@@ -144,6 +154,14 @@ In particolare segnaliamo.
 -   Per KiCad (in Italiano) -
     [Video1](https://www.youtube.com/watch?v=7sM9sz2WrRw) -
     [Video2](https://www.youtube.com/watch?v=kaA5pS84EPQ)\
+
+{{
+    avvertimento(
+        livello=0,
+        msg="Pur non volendo in questa sede entrare nel merito di come si progetta un circuito, va ricordato che la larghezza minima delle tracce e la loro minima spaziatura varia rispettivamente a seconda delle quantità di corrente e di tensione che devono sostenere: per andare sul sicuro è possibile sovradimensionarne la loro larghezza e spaziatura, ma se volete fare le cose per bene vi consigliamo di utilizzare un [calcolatore automatico di dimensione delle tracce](http://www.4pcb.com/trace-width-calculator.html) disponibile online."
+    )
+}}
+
 
 Inoltre è bene chiarire che **con la fresatrice non si può riprodurre
 qualsiasi circuito progettato**, in quanto la tecnica di fresatura
