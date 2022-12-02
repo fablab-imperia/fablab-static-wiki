@@ -76,3 +76,8 @@ code
         max-width: 50%;
     }
 }
+
+.card
+{
+    box-shadow: 2px 2px 5px #6d6d6d;
+}
