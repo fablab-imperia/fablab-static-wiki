@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Display 7 segmenti</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;display_sette_segmenti.jpg"/>
+    
+    
+    <figcaption>Test di display a 7 segmenti</figcaption>
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/display-sette-segmenti/#descrizione">Descrizione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/display-sette-segmenti/#collegamenti">Collegamenti</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/display-sette-segmenti/#pilotare-l-integrato-max7219-con-arduino">Pilotare l&#x27;integrato MAX7219 con Arduino</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/display-sette-segmenti/#assorbimento-di-corrente">Assorbimento di corrente</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/display-sette-segmenti/#altri-usi-del-max72xx">Altri usi del MAX72xx</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <p>Quando in un nostro progetto
+abbiamo bisogno di visualizzare dei valori alfanumerici, al posto di
+utlizzare un grosso display LCD possiamo ricorrere ai semplici e sempre
+giovani display a 7 segmenti.<br />
+Tramite l'accensione di una combinazione di LED, disposti e ordinati in
+un unico display secondo lo standard indicato in figura, è possibile
+mostrare cifre numeriche e anche alcune lettere, oltre al punto
+decimale. Esistono sul mercato display con colori e dimensioni molto
+diverse, singoli o appaiati, a catodo comune o ad anodo comune. A
+seconda dell'uso che se ne vuole fare, è opportuno scegliere quelli più
+adatti al proprio progetto.</p>
+<p><figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;2&#x2F;2b&#x2F;Seven_segment_display-animated.gif">
+        <img src="http:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;2&#x2F;2b&#x2F;Seven_segment_display-animated.gif"/>
+    </a>
+    
+    
+    
+    <figcaption>Esempio dei caratteri che si possono mostrare (wikimedia.org)</figcaption>
+    
+</figure>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;display_sette_segmenti_denominazione.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;display_sette_segmenti_denominazione.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Schema della denominazione dei segmenti</figcaption>
+    
+</figure></p>
+<h2 id="descrizione">Descrizione</h2>
+<p>La relativa semplicità di funzionamento di questi display può
+consentirci di utilizzarli anche i progetti dove non sono presenti
+microcontrollori programmabili. D'altro canto, però, per gestire ogni
+singola cifra alfanumerica vanno pilotati ben 7 LED (+1 per il punto
+decimale) e questo può creare dei problemi, perchè con le usuali schede
+di prototipazione in uso nei Fablab (tipo Arduino o Raspberry) si
+farebbe molto presto a esaurire i pin disponibili per la loro
+accensione.<br />
+Per fortuna, esistono &quot;microchip&quot; appositamente creati per risolvere
+questo problema, che utilizzano la tecnica cosiddetta del
+<a href="https://it.wikipedia.org/wiki/Multiplazione">multiplexing</a>&quot;,
+e  abbinati a un microcontrollore esterno (ad esempio un Arduino),
+invece di accendere simultaneamente tutti i led necessari per
+visualizzare le cifre sui display, attivano solo 1 LED per volta, ma a
+una velocità talmente rapida da ingannare l'occhio umano e dare la
+percezione di una accensione simultanea (sfruttando in pratica lo stesso
+principio dei fotogrammi nel cinema).</p>
+<p><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;max7219_led_driver.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;max7219_led_driver.jpg"/>
+    </a>
+    
+    
+    
+</figure>
+Usando questo stratagemma, un integrato della serie 
+<a href="http://playground.arduino.cc/Main/MAX72XXHardware">MAX7219/7221</a> (o
+equivalente) può controllare 8 cifre a display (quindi ben 64 LED)
+occupando solo 3 pin digitali. Se questo vi sembrasse ancora poco, è
+possibile collegare in cascata fino a 8 di questi MAX7219 / MAX7221, con
+il risultato di riuscire a governare ben 64 cifre a display (512 LED!)
+sfruttanto sempre i soli 3 pin.  Naturalmente, se governare un numero di
+led così elevato è tecnicamente possibile, aumentando considerevolmente
+il numero di display da gestire con soli 3 pin, il periodo di refresh
+dei display potrebbe apparire visibile. In genere quindi la regola è che
+meno display numerici vengono gestiti, migliore è il risultato.<br />
+<br />
+</p>
+<h2 id="collegamenti">Collegamenti</h2>
+<p>Abbiamo 3 dispositivi in gioco:</p>
+<ol>
+<li>La nostra schedina di prototipazione (Arduino o simile)</li>
+<li>L'integrato MAX7219 o MAX7221</li>
+<li>Il display o un array di display a 7 segmenti</li>
+</ol>
+<p>I collegamenti tra Arduino (o simile) e MAX 7219 dovranno essere:
+<figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;tronixstuff.com&#x2F;2013&#x2F;10&#x2F;11&#x2F;tutorial-arduino-max7219-led-display-driver-ic">
+        <img src="http:&#x2F;&#x2F;i.imgur.com&#x2F;V8fSRya.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>source tronixstuff.com - (CC - BY-NC-SA v4)</figcaption>
+    
+</figure>
+mentre i collegamenti tra un MAX72xx e display sono i seguenti:<br />
+<figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;playground.arduino.cc&#x2F;Main&#x2F;MAX72XXHardware">
+        <img src="http:&#x2F;&#x2F;i.imgur.com&#x2F;xSMqceC.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>source Arduino Playground</figcaption>
+    
+</figure></p>
+<p>Come potete vedere, nonostante i miracoli offerti dalla modalità del
+multiplexing, specialmente se abbiamo diversi display numerici separati,
+il numero di connessioni da effettuare per collegare all'integrato ogni
+singolo display  è notevole. Se poi avete scelto di utilizzare dei
+display di dimensioni ridotte, vi ritroverete a dover effettuare un gran
+numero di saldature molto ravvicinate. <br />
+Anche qua, per fortuna esistono in commercio delle soluzioni già pronte
+con diversi display numerici già appaiati al cui interno le connessioni
+sono già state predisposte e che consentono di collegare facilmente i
+display. Alcune schedine, includono addirittura l'integrato MAX7219 (o
+equivalente), che permettono quindi di collegare il tutto molto
+facilmente alla nostra schedina di prototipazione.</p>
+<p>Se scegliete di utilizzare un integrato MAX7219 &quot;nudo&quot;, dovrete
+leggere con attenzione il datasheet con le specifiche tecniche per
+stabilire il valore della resistenza da interporre tra i 5V e il pin 18
+e non dovrete dimenticarvi di utilizzare i condensatori a &quot;protezione&quot;
+del circuito. In questo caso, inoltre, vi consigliamo di ricorrere ad
+apposite schedine di &quot;breakout&quot; (anche autocostruibili) pensate
+appositamente per rendere più agevoli i collegamenti tra l'integrato,
+il vostro Arduino (o simile) e i display. Ad esempio, noi abbiamo
+fresato alcune schedine di breakout trovate sul sito fritzing.com, che
+potete vedere in figura.</p>
+<figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;fritzing.org&#x2F;projects&#x2F;max7219-breakout-board">
+        <img src="http:&#x2F;&#x2F;i.imgur.com&#x2F;isAXs8h.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Il progetto originale stampabile tramite Fritzing</figcaption>
+    
+</figure><figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;fritzing.org&#x2F;projects&#x2F;max7219-breakout-board">
+        <img src="http:&#x2F;&#x2F;i.imgur.com&#x2F;DkCxZOhm.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>La schedina di breakout ricreata da noi</figcaption>
+    
+</figure><h2 id="pilotare-l-integrato-max7219-con-arduino">Pilotare l'integrato MAX7219 con Arduino</h2>
+<p><code>   Dando per scontato che abbiate a disposizione un prototipo con tutti i collegamenti effettuati correttamente, con la giusta resistenza e condensatori al loro posto, dovremo ora collegare i 3 pin necessari per il collegamento tra Arduino e l'integrato.</code></p>
+<p>Per questa operazione è possibile scegliere semplicemente 3 pin
+digitali, ad esempio come segue:</p>
+<table class='page-table'><thead><tr><th>Arduino Uno</th><th>MAX72xx</th></tr></thead><tbody>
+<tr><td>Pin 12</td><td>Pin 1</td></tr>
+<tr><td>Pin 11</td><td>Pin 13 (CLK)</td></tr>
+<tr><td>Pin 10</td><td>Pin 12( LOAD)</td></tr>
+</tbody></table>
+<p><br />
+Fatto questo, dobbiamo pensare alla programmazione, ma anche questa
+operazione è piuttosto semplice, in quanto ci viene in soccorso
+l'apposita libreria LedControl (non è l'unica...).<br />
+Nel codice di esempio che segue, viene inizializzato un MAX7219, quindi
+vengono accesi in sequenza una fila di trattini su tutti i display
+numerici collegati e viene visualizzato un numero progressivo, il tutto
+ciclicamente. Nel video più sotto potete osservare il risultato di
+questo test su un array di 6 piccoli display numerici collegato a una
+scheda Teensy (tipo Arduino).</p>
+<pre data-lang="{.cpp .numberLines}" style="background-color:#2b303b;color:#c0c5ce;" class="language-{.cpp .numberLines} "><code class="language-{.cpp .numberLines}" data-lang="{.cpp .numberLines}"><span>#include &quot;LedControl.h&quot; //  need the library
+</span><span>LedControl lc=LedControl(12,11,10,1); // 
+</span><span> 
+</span><span>// pin 12 is connected to the MAX7219 pin 1
+</span><span>// pin 11 is connected to the CLK pin 13
+</span><span>// pin 10 is connected to LOAD pin 12
+</span><span>// 1 as we are only using 1 MAX7219
+</span><span> 
+</span><span>void setup()
+</span><span>{
+</span><span>  // the zero refers to the MAX7219 number, it is zero for 1 chip
+</span><span>  lc.shutdown(0,false);// turn off power saving, enables display
+</span><span>  lc.setIntensity(0,8);// sets brightness (0~15 possible values)
+</span><span>  lc.clearDisplay(0);// clear screen
+</span><span>}
+</span><span>void loop()
+</span><span>{
+</span><span>  for (int row=0; row&lt;8; row++)
+</span><span>  {
+</span><span>    for (int col=0; col&lt;8; col++)
+</span><span>    {
+</span><span>      lc.setLed(0,col,row,true); // turns on LED at col, row
+</span><span>      delay(25);
+</span><span>    }
+</span><span>  }
+</span><span> 
+</span><span>  for (int row=0; row&lt;8; row++)
+</span><span>  {
+</span><span>    for (int col=0; col&lt;8; col++)
+</span><span>    {
+</span><span>      lc.setLed(0,col,row,false); // turns off LED at col, row
+</span><span>      delay(25);
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p><small>source: <a href="http://tronixstuff.com/2013/10/11/tutorial-arduino-max7219-led-display-driver-ic/">tronixstuff.com (CC) BY-NC-SA
+v.4.0</a></small></p>
+<p>E questo è il risultato della nostra prova:
+<div >
+    <iframe
+        src="https://www.youtube.com/embed/Wdm4Pzc5E4o"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div></p>
+<h2 id="assorbimento-di-corrente">Assorbimento di corrente</h2>
+<p>Come già anticipato, ogni MAX7219 deve essere corredato di una
+resistenza adeguata al tipo di display a LED che intendete utilizzare,
+che è possibile stabilire studiando i datasheet dell'integrato e quelli
+del vostro display. Una volta stabilito il valore corretto della
+resistenza, quando sull'IDE di arduino si inizializzano i display, è
+possibile impostare l'intensità di illuminazione dei LED tramite il
+comando.</p>
+<pre data-lang="{.cpp .numberLines}" style="background-color:#2b303b;color:#c0c5ce;" class="language-{.cpp .numberLines} "><code class="language-{.cpp .numberLines}" data-lang="{.cpp .numberLines}"><span>lc.setIntensity(0,8);// sets brightness (0~15 possible values)
+</span></code></pre>
+<p>questo valore è quello che ha il peso maggiore nel determinare gli
+assorbimenti totali dei vostri display a 7 segmenti.<br />
+Dai nostri test, effettuati collegando in cascata 4 MAX7219 equipaggiati
+ognuno con 6 display numerici (tot 24 display) completamente accesi
+simultaneamente (per un totale di 192 LED) e corredati da resistenze da
+47K Ohm, pilotati con una schedina Teensy2++, gli assorbimenti sono
+stati i seguenti:</p>
+<table class='page-table'><thead><tr><th>Test</th><th>Valore misurato</th></tr></thead><tbody>
+<tr><td>Assorbimento a vuoto della Teensy2++</td><td>11 mA</td></tr>
+<tr><td>Valore di intensità 13</td><td>193 mA (totali)</td></tr>
+<tr><td>Valore di intensità 0</td><td>19,6 mA (totali)</td></tr>
+</tbody></table>
+<h2 id="altri-usi-del-max72xx">Altri usi del MAX72xx</h2>
+<p>Vale la pena di citare che con lo stesso tipo di integrato è possibile
+utilizzare anche delle matrici di LED per visualizzare testo o grafica
+anche di grosse dimensioni. Per maggiori informazioni vedere il
+<a href="http://tronixstuff.com/2013/10/11/tutorial-arduino-max7219-led-display-driver-ic/">tutorial su
+tronixstuff.com</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

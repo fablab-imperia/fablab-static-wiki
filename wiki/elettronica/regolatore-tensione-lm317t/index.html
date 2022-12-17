@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Regolatore tensione LM317T</h1>
+<div class="row">
+    
+    
+</div>
+
+
+<hr>
+
+<div class="content">
+    <p>I facili guasti dei regolatori di tensione (a 3 piedi x intenderci) sono
+dovute alla presenza di tensioni inverse che rovinano l'integrato. Nel
+caso della serratura nfc, ogni qualvolta avessimo provveduto
+all'alimentazione da usb x la verifica dello sketch abbiamo alimentato
+il regolatore all'inverso!</p>
+<p>L'errore + banale da me fatto nel tentativo di far funzionare il motore
+con non + di 12 V posticipando il condensatore dopo raddrizzatore e
+regolatore (e non solo dopo il primo) idem ha creato la sua fusione (per
+la corrente inversa creata dal condensatore allo spegnimento del
+dispositivo)!</p>
+<p>La giuda eccessivamente dettagliata che da ragguagli in merito al
+funzionamento del particolare regolatore di tensione variabile LM317T
+è http://www.adrirobot.it/elettronica/lm317/lm_317.htm e suggerisce il
+DS1 e DS2 per evitare danneggiamenti rispettivamente x correnti inverse
+o cortocircuiti accidentali (per l'eventuale aggiunta del condensatore
+C3 per il particolare regolatore LM317T). Da far attenzione ad un errore
+di rappresentazione del diodo a fine pagina e fissato R1 a 225
+dimensionamento R2 ottenuto per tentativi con i seguenti dati rilevati:</p>
+<p>18.9 - 7.7=     18.9 - 6.8= Delta</p>
+<p>11.2     12.1 -0.9</p>
+<p>1165     1005 647</p>
+<p>m=-178</p>
+<p>q=3160</p>
+<p>Per ottenere i 5V partendo dai 18.9:</p>
+<p>18.9 - 5.00 = 13.9</p>
+<p>(-178 * 13.9) + 3160 =</p>
+<p>685Hom</p>
+<p>by Valerio </p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

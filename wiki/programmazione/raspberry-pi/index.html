@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Raspberry Pi</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+
+    <img src="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;thumb&#x2F;f&#x2F;f1&#x2F;Raspberry_Pi_4_Model_B_-_Side.jpg&#x2F;320px-Raspberry_Pi_4_Model_B_-_Side.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#info-varie">Info Varie</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#abilitare-la-porta-seriale-gpio">ABILITARE LA PORTA SERIALE GPIO</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#minicom-comunicazione-via-seriale">MINICOM - COMUNICAZIONE via seriale</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#altre-info-sull-interfaccia-gpio">Altre info sull&#x27;interfaccia GPIO</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#porta-seriale-aggiuntiva">PORTA SERIALE AGGIUNTIVA</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#impostare-il-wifi">IMPOSTARE IL WIFI</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/programmazione/raspberry-pi/#inviare-dati-a-thingspeak">Inviare dati a thingspeak</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="info-varie">Info Varie</h3>
+<p>Una buona distro per fare hacking hardware:</p>
+<p><a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro/occidentalis-v0-dot-2">http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro/occidentalis-v0-dot-2</a></p>
+<p>Scaricare lo zip ed estrarlo</p>
+<p>Bisogna prima formattare adeguatamente una SD da almeno 4Gb</p>
+<p>(leggere punto 3: format the disk)</p>
+<p><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Using_NOOBS">http://elinux.org/RPi_Easy_SD_Card_Setup#Using_NOOBS</a></p>
+<p>Quindi bisogna scrivere l'immagine estratta dallo zip con il software
+che si trova qui:</p>
+<p><a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Flashing_the_SD_Card_using_Windows">http://elinux.org/RPi_Easy_SD_Card_Setup#Flashing_the_SD_Card_using_Windows</a></p>
+<p>Una volta fatto, la scheda può già girare nella Raspberry. Mettiamola e
+diamo corrente. All'avvio, se non parte da solo, lanciare:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo raspi-config
+</span></code></pre>
+<p>E prima di tutto estendere la partizione a tutta la SD disponibile
+(expand rootfs), quindi impostare password, localizzazione tastiera, ed
+eventualmente abilitare il server ssh.</p>
+<p>Se serve accedere al desktop usare il comando</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>startx
+</span></code></pre>
+<h3 id="abilitare-la-porta-seriale-gpio">ABILITARE LA PORTA SERIALE GPIO</h3>
+<p>Se si vuole usare la porta seriale per scambiare dati con altri
+dispositivi (arduino, xbee, ecc..) bisogna disabilitare getty che di
+default apre la schermata di login anche sulla porta seriale. Per fare
+questo bisogna andare editare un paio di files. Per modificare i files
+usare il tool di editing &quot;nano&quot; es:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo nano /percorso/nomefile
+</span></code></pre>
+<p>da http://blog.oscarliang.net/raspberry-pi-and-arduino-connected-serial-gpio/</p>
+<h3 id="minicom-comunicazione-via-seriale">MINICOM - COMUNICAZIONE via seriale</h3>
+<p>ATTENZIONE: NON collegare direttamente un Arduino, che va a 5v e
+danneggerebbe la R-pi!</p>
+<p>Una volta collegati i pin 3.3v - GND - Rx - Tx secondo lo schema, ed
+avere impostato correttamente l'altro dispositivo con una certa
+velocità di baud di trasferimento dati (9600 baud in questo caso),
+lanciare minicom (o un altro programma apposito) con il seguente
+comando:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo minicom -b 9600 -D /dev/ttyAMA0
+</span></code></pre>
+<p>Se necessario, abilitare le opzioni A e E dentro minicom accedendo alle
+opzioni con Ctrl+A</p>
+<h3 id="altre-info-sull-interfaccia-gpio">Altre info sull'interfaccia GPIO</h3>
+<p><a href="http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup">http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup</a></p>
+<h3 id="porta-seriale-aggiuntiva">PORTA SERIALE AGGIUNTIVA</h3>
+<p>In realtà la raspberry è fornita di due porte seriali con diverse
+prestazioni.</p>
+<p>Per tutti i dettagli vedere qui</p>
+<p><a href="http://lavalink.com/2012/04/more-on-raspberry-pi-serial-ports/">http://lavalink.com/2012/04/more-on-raspberry-pi-serial-ports/</a></p>
+<h3 id="impostare-il-wifi">IMPOSTARE IL WIFI</h3>
+<p>Per usare il wifi è necessario avere una scheda WIFI su chiave USB
+compatibile (molte non lo sono per problemi di eccessivo assorbimento di
+corrente dalla Raspberry!).</p>
+<p>La distro di cui sopra (occidentalis di adafruit) è predisposta per il
+wifi ma va impostato manualmente all'inizio.</p>
+<p>Seguire le istruzioni su questa pagina:</p>
+<p><a href="http://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis">http://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis</a></p>
+<h3 id="inviare-dati-a-thingspeak">Inviare dati a thingspeak</h3>
+<p><a href="http://www.desert-home.com/2013/09/raspberry-pi-and-thingspeak.html">http://www.desert-home.com/2013/09/raspberry-pi-and-thingspeak.html</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Stazione meteo wireless</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;stazione_meteo_wireless.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#in-breve">In breve...</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#i-componenti">I Componenti</a>
+                
+                    <ul>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#l-unita-esterna">L&#x27;unità esterna</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#l-unita-interna">L&#x27;unità interna</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#connessioni">Connessioni</a>
+                                
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#la-programmazione">La programmazione</a>
+                
+                    <ul>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#impostare-le-schede-xbee-serie-1">Impostare le schede XBee Serie 1</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/progetti/stazione-meteo-wireless/#sketch-per-l-arduino-fi">Sketch per l&#x27;Arduino Fi</a>
+                                
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h2 id="in-breve">In breve...</h2>
+<p>La
+Stazione Meteo Wireless permette la registrazione di dati meteorologici
+raccolti da sensori e la loro analisi tramite la creazione di grafici su
+internet ed è composta da un'unità esterna e una interna.</p>
+<p>L'unità esterna, calibrata per un basso consumo di corrente, viene
+alimentata da una batteria si carica durante il giorno tramite un
+piccolo pannello fotovoltaico, mentre l'alimentazione del Raspberry
+dell'unità interna è fornita dalla rete elettrica.</p>
+<p>La comunicazione in wireless tra le due unità è affidata alle due
+schedine XBee Serie 1 che, appositamente programmate, permettono di
+ottenere in modo trasparente una connessione seriale in remoto, come se
+fossero cablate insieme, e l'unità interna è collegata via WiFi
+permette l'invio dei dati su internet.</p>
+<p>Le schede di prototipazione alla base di questo progetto sono state
+scelte tra quelle più adatte agli scopi e disponibili al Fablab. In
+particolare la scheda Arduino Fio è predisposta per l'alloggiamento di
+schede di tipo XBee, e inoltre include un circuito di regolazione di
+carica, con ingresso per la batteria e per alimentazioni di ricarica,
+che è molto comodo per poter utilizzare batterie ricaricabili e creare
+progetti autonomi.</p>
+<p>Per l'unità interna abbiamo scelto un Raspberry Pi perchè era la
+possibiltà più rapida per poter inoltrare i dati dei sensori su Wi-Fi,
+ma è evidentemente un componente sovradimensionato rispetto al lavoro
+richiesto, e pertanto può essere efficacemente sostituito con
+dispositivi più semplici.</p>
+<h2 id="i-componenti">I Componenti</h2>
+<h3 id="l-unita-esterna">L'unità esterna</h3>
+<ul>
+<li>Un'unità esterna autonoma basata su Arduino Fio è composta da:
+<ul>
+<li>Arduino Fio</li>
+<li>Scheda Wireless XBee (Serie 1)</li>
+<li>Batteria Li-Ion da 1400 mAh</li>
+<li>Pannello solare da 6W</li>
+<li>Scatola stagna di derivazione elettrica</li>
+<li>Sensore Temperatura (DS18S20)</li>
+<li>Sensore Umidità (DHT22)</li>
+<li>Sensore Pressione atmosferica (BMP085)</li>
+<li>Anemometro (Velocità vento)</li>
+<li>Pluviometro (Precipitazione)</li>
+<li>Sensore Illuminazione (via Led con funzionamento inverso)</li>
+<li>Modulo Scheda SD</li>
+<li>Orologio (Real Time Clock DS1307)</li>
+</ul>
+</li>
+</ul>
+<h3 id="l-unita-interna">L'unità interna</h3>
+<ul>
+<li>Un'unità interna basata su Raspberry è composta da:
+<ul>
+<li>Raspberry Pi (Model B)</li>
+<li>Scheda SD da 4Gb</li>
+<li>Chiavetta Wi-Fi</li>
+<li>Scheda Wireless XBee (Serie 1)</li>
+<li>Box standard per Raspberry Pi B</li>
+</ul>
+</li>
+</ul>
+<h3 id="connessioni">Connessioni</h3>
+<p>Per il cablaggio dei vari componenti e dei moduli sensori, è necessario
+rifarsi alla documentazione rilasciata dai produttori o disponibile su
+internet. Nel nostro caso, abbiamo ricavato informazioni da diverse
+fonti, e indichiamo di seguito i link utilizzati.</p>
+<p>Ogni singolo componente va quindi collegato seguendo le relative
+istruzioni. Vi consigliamo comunque di procedere passo passo aggiungendo
+allo sketch del vostro Arduino Fio un sensore alla volta e verificandone
+il funzionamento</p>
+<ul>
+<li>BMP085 Pressure
+sensor <a href="http://bildr.org/2011/06/bmp085-arduino/">http://bildr.org/2011/06/bmp085-arduino/</a>, <a href="http://www.sparkfun.com/tutorials/253">http://www.sparkfun.com/tutorials/253</a></li>
+<li>RTC
+Clock <a href="http://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/understanding-the-code">http://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/understanding-the-code</a></li>
+<li>SD Card <a href="http://arduino.cc/en/Tutorial/Datalogger">http://arduino.cc/en/Tutorial/Datalogger</a></li>
+<li>Arduino Fio
+Programming <a href="http://arduino.cc/en/Main/ArduinoBoardFioProgramming">http://arduino.cc/en/Main/ArduinoBoardFioProgramming</a></li>
+<li>Temperature DS18S20 sensor <a href="http://bildr.org/2011/07/ds18b20-arduino/">http://bildr.org/2011/07/ds18b20-arduino/</a></li>
+<li>DHT22 Humidity sensor <a href="http://gist.github.com/dmccreary/7503212">http://gist.github.com/dmccreary/7503212</a></li>
+<li>LED as Light
+sensor <a href="http://www.instructables.com/id/LED-as-lightsensor-on-the-arduino/">http://www.instructables.com/id/LED-as-lightsensor-on-the-arduino/</a></li>
+<li>Vcc internal
+sensor <a href="http://code.google.com/p/tinkerit/wiki/SecretVoltmeter">http://code.google.com/p/tinkerit/wiki/SecretVoltmeter</a>, <a href="http://www.semifluid.com/2012/09/09/arduino-fio-internal-voltmeter-and-thermometer/">http://www.semifluid.com/2012/09/09/arduino-fio-internal-voltmeter-and-thermometer/</a></li>
+<li>Wind sensor / Vane / Rain
+gauge <a href="http://kesslerarduino.wordpress.com/2012/06/21/sparkfun-weather-station/">http://kesslerarduino.wordpress.com/2012/06/21/sparkfun-weather-station/</a></li>
+<li>Barometric Pressure sensor <a href="http://bildr.org/2011/06/bmp085-arduino/">http://bildr.org/2011/06/bmp085-arduino/</a></li>
+<li>Arduino Sleep
+Mode <a href="http://playground.arduino.cc/Learning/arduinoSleepCode">http://playground.arduino.cc/Learning/arduinoSleepCode</a></li>
+<li>Arduino Fio and XBee Sleep
+Modes <a href="http://www.semifluid.com/2012/09/07/arduino-fio-low-power-setup/">http://www.semifluid.com/2012/09/07/arduino-fio-low-power-setup/</a></li>
+<li>XBee <a href="http://www.johnhenryshammer.com/WOW2/pagesHowTo/xbeeSeries1.php">http://www.johnhenryshammer.com/WOW2/pagesHowTo/xbeeSeries1.php</a>,  <a href="http://www.desert-home.com/p/the-world-of-xbee.html">http://www.desert-home.com/p/the-world-of-xbee.html</a></li>
+<li>Raspberry Pi and ThingSpeak (Python
+script) <a href="http://www.desert-home.com/2013/09/raspberry-pi-and-thingspeak.html">http://www.desert-home.com/2013/09/raspberry-pi-and-thingspeak.html</a>, <a href="http://pyserial.sourceforge.net/">http://pyserial.sourceforge.net/</a></li>
+</ul>
+<h2 id="la-programmazione">La programmazione</h2>
+<h3 id="impostare-le-schede-xbee-serie-1">Impostare le schede XBee Serie 1</h3>
+<p>...</p>
+<h3 id="sketch-per-l-arduino-fi">Sketch per l'Arduino Fi</h3>
+<p>Anzitutto va precisato che l'Arduino Fio non consente il caricamento
+via USB degli sketch, ma come alcune altre schede arduino di ridotte
+dimensioni, è necessario utilizzare un piccolo programmatore FTDI e
+collegarlo correttamente agli appositi Pin indicati sulla scehda.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

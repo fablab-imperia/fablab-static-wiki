@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Realtime clock RTC DS1307</h1>
+<div class="row">
+    
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/realtime-clock-rtc-ds1307/#descrizione">Descrizione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/realtime-clock-rtc-ds1307/#links-utili">Links utili</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="descrizione">Descrizione</h3>
+<p>Modulo per tenere traccia di data-ora indipendentemente dai reset di
+arduino. Necessita di batteria 3V permanente altrimenti si resetta e
+anche di cristallo da 32.768 Khz. E' molto utile scaricare la libreria
+dedicata che permette di settarlo la prima volta prendendo direttamente
+l'ora dal pc.</p>
+<p>Una sola batteria a pastiglia CR2032 (vedi foto sotto) da 3V tiene
+l'orologio attivo per circa 5 anni!!</p>
+<p><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_1.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_1.png"/>
+    </a>
+    
+    
+    
+    <figcaption>Collegamenti</figcaption>
+    
+</figure>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_2.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_2.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Esempio-prova di connessione (senza resistenze pull-up su bus I2C pare funzionare lo stesso)</figcaption>
+    
+</figure>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_3.gif">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;realtime_clock_3.gif"/>
+    </a>
+    
+    
+    
+    <figcaption>Schema connessioni di cui sopra:</figcaption>
+    
+</figure></p>
+<h3 id="links-utili">Links utili</h3>
+<p>Libreria da scaricare: <a href="https://github.com/adafruit/RTClib">https://github.com/adafruit/RTClib</a> (è
+necessario rinominare la cartella della libreria togliendo il trattino,
+se no non la carica)</p>
+<p>Sketch funzionante da
+adafruit: http://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/understanding-the-code</p>
+<p>Tuorial in italiano:
+<a href="http://www.logicaprogrammabile.it/usare-modulo-rtc-ds1307-arduino/">http://www.logicaprogrammabile.it/usare-modulo-rtc-ds1307-arduino/</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

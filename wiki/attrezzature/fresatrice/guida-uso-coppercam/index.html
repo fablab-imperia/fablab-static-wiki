@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Guida all&#x27;uso di Coppercam</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_1.png"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#installazione">Installazione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#impostare-i-parametri-iniziali">Impostare i parametri iniziali</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#importazione-dei-file-gerber-excellon">Importazione dei file Gerber&#x2F;Excellon</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#allineamento-dei-fori">Allineamento dei fori</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#definizione-delle-dimensioni-di-fori-e-piazzole">Definizione delle dimensioni di fori e piazzole</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/guida-uso-coppercam/#calcolo-dei-percorsi-utensile">Calcolo dei percorsi utensile</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <p><a href="http://www.galaad.net/coppercam-ita.html">CopperCam</a> è un software
+molto utile e piuttosto facile da usare, che permette generare i
+percorsi utensile partendo da file Gerber/Excellon di un circuito, ed
+eventualmente apportarvi modifiche, per poi passarli al software di
+comando di una fresatrice.Questo tutorial non è pensato per essere una
+guida completa all'utilizzo di questo programma, ma solo per illustrare
+i passi fondamentali per elaborare i file esportati del vostro circuito.
+Inoltre, di seguito si presuppone che abbiate letto il post &quot;Guida alla
+creazione di PCB con una fresatrice&quot;, dove vengono spiegate le diverse
+fasi necessarie per produrre un PCB, partendo da zero.Questo tutorial si
+articola nelle seguenti fasi</p>
+<h2 id="installazione">Installazione</h2>
+<p>può essere adoperato anche in versione Demo, con qualche limitazione
+solo nella fase di esportazione del G-Code. Potete quindi scaricarlo da
+casa per fare pratica e per preparare il vostro lavoro da casa inserendo
+tutti i parametri, e poi usare quello con licenza originale disponibile
+al fablab (gentilmente donata dal produttore) per l'esportazione e la
+lavorazione del G-Code. È consigliabile installare questo programma su
+un PC abbastanza performante, in quanto le piste e gli svuotamenti
+vengono elaborati riga per riga e possono impiegare molto tempo a essere
+calcolati (specialmente con l'aumentare della complessità del
+circuito).Durante l'installazione è anche possibile scegliere la lingua
+italiana. In genere è preferibile usare la lingua inglese ma in questo
+caso, nonostante alcuni termini tradotti in maniera poco intuitiva (le
+piazzole vengono nominate &quot;punti&quot;, e i livelli &quot;strati&quot; e qualche
+altro errore minore) la traduzione italiana può essere un buon aiuto, in
+particolare per chi è agli inizi.</p>
+<h2 id="impostare-i-parametri-iniziali">Impostare i parametri iniziali</h2>
+<p>Come prima cosa, dal menù Parametri, accertatevi che come <u>unità di
+misura</u> sia selezionato &quot;millimetri&quot; e come unità di <u>misura
+della velocità</u> sia selezionato &quot;mm/min&quot;. Quindi, sempre dal menù
+Parametri, potete aprire lo strumento &quot;Magazzino utensili&quot;, mostrato
+in figura. Qui vanno inserite le caratteristiche e i parametri di
+lavorazione di tutte le frese a nostra disposizione. Cliccando sui
+pulsanti indicati in rosso, a fianco al numero identificativo
+dell'utensile, è possibile impostare gli utensili successivi. </p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_2.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_2.png"/>
+    </a>
+    
+    
+    
+    <figcaption>In questa finestra impostiamo i parametri per ogni utensile</figcaption>
+    
+</figure>
+<p>Per sapere quali parametri di lavorazione utilizzare, vi rimandiamo alla
+&quot;Fase 2&quot; della <a href="Realizzare_PCB_con_una_fresatrice_CNC" title="wikilink">Guida alla creazione di
+PCB</a>.</p>
+<h2 id="importazione-dei-file-gerber-excellon">Importazione dei file Gerber/Excellon</h2>
+<p>Il caricamento di un circuito all'interno di CopperCam avviene per
+livelli, pre-assegnati per ciasuna fase della lavorazione:</p>
+<table class='page-table'><thead><tr><th>Livello</th><th>Lavorazione</th></tr></thead><tbody>
+<tr><td>Livelli da 1 a 4</td><td><strong>Segnali</strong></td></tr>
+<tr><td>Livello 5</td><td><strong>Fori</strong></td></tr>
+<tr><td>Livello 6</td><td><strong>Taglio</strong></td></tr>
+</tbody></table>
+<p>Ogni volta che si apre un file Gerber (o Excellon, per i fori), il
+programma cercherà di assegnare automaticamente il livello corretto a
+seconda del contenuto. Cliccate quindi su &quot;File/Nuovo Circuito&quot; (o sul
+primo pulsante da sinistra) e aprite prima di tutto il file Gerber del
+livello dei segnali. Se CopperCam dovesse avvertirci che mancano delle
+definizioni all'interno del file Gerber, cliccate OK. Per il momento
+potete chiudere anche la successiva piccola finestra in cui ci vengono
+chieste le informazioni mancanti. Provvederemo infatti a definire i dati
+corretti quando avremo caricato anche le informazioni di tutti i fori.</p>
+<p><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_3.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_3.png"/>
+    </a>
+    
+    
+    
+</figure>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_4.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_4.png"/>
+    </a>
+    
+    
+    
+</figure>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_5.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_5.png"/>
+    </a>
+    
+    
+    
+</figure></p>
+<p>A questo punto, se dovesse comparire la richiesta di confermare se la
+rete di tracce definisce un profilo di taglio, cliccate &quot;Sì&quot; SOLO se
+siete certi che il contorno evidenziato corrisponda effettivamente a un
+profilo di taglio, altrimenti cliccate &quot;No&quot;.Bene, a questo punto
+dovreste vedere davanti a voi il disegno delle piste del vostro
+circuito. Verificate che il disegno del circuito appaia orientato
+correttamente. Se infatti, come è consuetudine, sul vostro CAD avete
+impostato le tracce sul lato inferiore del circuito (dove vanno
+effettuate cioè tutte le saldature), è possibile che ora su CopperCAM il
+circuito sia visualizzato &quot;specchiato&quot; rispetto al CAD. Generalmente
+questo è normale, perchè state osservando direttamente la parte
+inferiore della PCB ma non datelo per scontato. Come riferimento, se
+avete inserito del testo da fresare sul rame, nell'anteprima di
+CopperCam dovrebbe essere correttamente leggibile.Ora, prima di fare
+qualsiasi altra cosa, cliccate il pulsante &quot;Riquadrare&quot; in alto, in
+modo da riportare a zero l'origine del circuito e facilitare
+l'allineamento dei livelli successivi.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_6.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_6.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Quindi potete procedere con il file di definizione delle forature (file
+Excellon), se disponibile, procedendo con l'allineamento come mostrato
+di seguito. Altrimenti passate direttamente al caricamento del profilo
+di taglio.Anzitutto tenete premuto il primo pulsante sulla sinistra per
+far comparire il pulsante &quot;Aprire forature&quot;, e cliccatelo.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_7.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_7.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Selezionate quindi il vostro file Excellon (di solito con estensione
+.txt o .drl) e confermate. CopperCam farà comparire quindi i punti
+relativi a ciascun foro della PCB, ma non potendo stabilire se i fori
+sono allineati correttamente, chiederà se l'importazione è valida.Per
+capire se possiamo confermare la validità, dobbiamo verificare che il
+livello dei fori appena caricato sia compatibile con le tracce già
+presenti. Non importa se i fori appaiono disallineati rispetto alle
+piazzole, l'importante è che lo spostamento sia uniforme, come indicato
+nella prossima figura.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_8.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_8.png"/>
+    </a>
+    
+    
+    
+    <figcaption>Le frecce di uguale colore indicano i le piazzole e i relativi fori che dovrebbero coincidere. I tratti blu mostrano però che lo scostamento è costante, e quindi è possibile confermare la validità dell&#x27;importazione</figcaption>
+    
+</figure>
+<p>Se viceversa i fori avessero spostamenti disomogenei rispetto alle
+piazzole, apparissero raggruppati tutti in una zona, o ancora fossero
+&quot;specchiati&quot; rispetto alle tracce, dovrete cliccare &quot;No&quot;, e
+modificare i parametri di importazione nell'apposita finestra.<br />
+Quando sarete sicuri che i fori presentano tutti lo stesso scostamento,
+potrete quindi confermare e procedere con l'allineamento automatico
+delle forature.</p>
+<h2 id="allineamento-dei-fori">Allineamento dei fori</h2>
+<p>Per allineare i fori, prima cosa va selezionato il livello dei segnali
+(di solito il primo), e va cliccato il pulsante indicato in figura con
+la freccia nera, e subito dopo una piazzola di riferimento, che si
+colorerà di fucsia. A questo punto <u>va prima selezionato il livello 5
+(fori)</u>, quindi dovrete cliccare sul pulsante indicato con la freccia
+rossa, e infine selezionare il foro che desiderate sia allineato con la
+piazzola appena evidenziata.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_9.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_9.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Così facendo, tutti i fori saranno spostati della misura necessaria a
+farli coincidere perfettamente con le piazzole.Volendo, nel programma
+sono presenti tutti gli strumenti necessari per effettuare
+l'allineamento manualmente.A questo punto manca soltanto il livello del
+profilo di taglio, se presente. Per caricarlo dovrete cliccare su
+&quot;Aggiungi strato&quot;, e aprire il file Gerber relativo.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_10.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_10.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Se tutto va bene, CopperCam vi chiederà conferma che la traccia
+evidenziata corrisponda a un profilo di taglio, quindi potrete
+confermare, e il profilo sarà caricato direttamente nel livello 6
+(taglio).Anche in questo caso, dovrete prestare attenzione che il
+profilo segua esattamente il contorno previsto, e non sia disallineato
+rispetto al resto del circuito. Nel caso, potrete spostarlo con gli
+appositi strumenti a disposizione nel programma.Cliccando ora in alto
+sul pulsante &quot;Taglio&quot; potete confermare le modalità di esecuzione del
+taglio perimetrale. Evitate invece di utilizzare l'opzione &quot;ponti&quot;,
+perchè sono inutili se si usa un biadesivo di fissaggio e
+costringerebbero a rimozioni manuali di vetronite con dispersione di
+polveri pericolose per la salute.</p>
+<h2 id="definizione-delle-dimensioni-di-fori-e-piazzole">Definizione delle dimensioni di fori e piazzole</h2>
+<p>Ogni componente che abbiamo caricato nel nostro file di progetto del
+circuito ha delle dimensioni dei piedini diverse da tutti gli altri.
+Quindi, a meno che non si sia provveduto ad uniformarli su CAD, i
+diametri dei relativi fori nel file importato possono variare anche di
+molto. Realizzare fori di diametri tutti diversi, obbligherebbe però a
+continui fermo-macchina, cambi utensile e ridefinizione della quota Z0,
+con notevoli perdite di tempo. Per questo motivo si cerca di ridurre al
+massimo i cambi utensile, utilizzando la fresa che consente di fresare i
+fori di diametro maggiore richiesti dal circuito anche per i fori più
+piccoli, o al massimo due misure.Il prossimo passo è quindi quello di
+redefinire le dimensioni delle piazzole di rame in modo tale che possano
+ospitare dei fori di diametro maggiore. Ciò è fattibile attraverso lo
+strumento &quot;Modifica punti&quot; (ricordate, punti=piazzole) nel menù
+Modifica.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_11.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_11.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Da questa finestra potrete impostare la forma e la dimensione (taglia)
+delle piazzole, e anche dei relativi fori. E' consigliabile far sì che
+la striscia di rame circolare della piazzola risultante dopo
+l'esecuzione del foro abbia almeno una larghezza di 0,4 mm.Per esempio,
+se nel nostro circuito i fori variassero da 0,6 mm a 1,0 mm, sarà
+conveniente impostare la dimensione di tutti i fori a 1,0 mm, e la
+dimensione delle piazzole almeno a 1,8 mm.</p>
+<p>Le piazzole elencate da questa finestra sono solo quelle che CopperCam
+riconosce come tali, ma è possibile che vi siano piazzole di forma ovale
+(tipicamente quelle allungate), che vengono riconosciute solo come parti
+di rame e non compaiano quindi nella finestra di cui sopra. In genere
+questo non è un problema perchè si tratta di piazzole già di grandi
+dimensioni che quindi non è necessario ingrandire ulteriormente. Quello
+che resta da fare, però è verificare che i loro fori siano eseguiti
+sempre con l'utensile del diametro che abbiamo scelto.Per fare questo
+conviene aprire direttamente la finestra &quot;Utensili selezionati&quot; dal
+menù &quot;Parametri&quot;...</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_12.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_12.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>... e nella parte destra &quot;Utensili di foratura, andare a eliminare
+tutti gli utensili di foratura con diametri che non intendiamo
+utilizzare, specificando nelle opzioni presenti con che criterio
+vogliamo che siano realizzati i fori. (In questa stessa finestra vanno
+stabiliti anche i parametri delle altre fasi della lavorazione.)A questo
+punto, come ulteriore conferma, possiamo aprire lo strumento &quot;Lista
+forature&quot; con l'apposito pulsante nella barra in alto. Qui vengono
+intuitivamente associati i diversi fori e la loro quantità all'utensile
+designato per la loro foratura secondo le impostazioni attuali, con la
+possibilità di evidenziarli sul disegno selezionandoli dalla lista. Se
+tutto va bene, dovreste avere conferma che tutti i fori per i piedini
+dei vostri componenti sono eseguiti con la fresa che avete scelto. Va
+notato che qualora fossero presenti fori per le viti come nell'esempio
+mostrato in figura, questi potranno essere eseguiti con una fresa
+leggermente più grande usando l'opzione di alesatura circolare.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_13.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_13.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>(Non pensate di allargare manualmente i fori dopo la fresatura! Oltre ad
+essere un'operazione pericolosa perchè implica la dispersione di
+polveri di vetronite molto dannose per la salute, rischiate di rovinare
+irreparabilmente la PCB!)Terminata questa fase potete finalmente
+dedicarci al calcolo dei percorsi utensile.</p>
+<h2 id="calcolo-dei-percorsi-utensile">Calcolo dei percorsi utensile</h2>
+<p>Per prima cosa <u>selezionate il livello 1</u>, quindi, per calcolare i
+percorsi per le tracce, selezionate il pulsante &quot;Calcolare contorni&quot;
+presente sulla barra in alto. Ci verrà presentata una finestra di
+conferma dei valori, dove se tutto va bene dovremo solo dare &quot;Ok&quot; per
+procedere.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_14.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_14.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Una volta terminato il calcolo, vi verrà mostrata l'anteprima dove
+dovrete controllare che a occhio i contorni risultino tutti ben definiti
+e tracciati correttamente, senza interruzioni. Noterete inoltre che però
+i solchi visibili nel rame saranno solo quelli relativi alle tracce,
+mentre resteranno diverse parti con residui di rame. Per eliminare anche
+questi e far apparire la PCB esattamente come l'avete progettata, è
+necessario procedere allo svuotamento (nella traduzione &quot;tratteggio&quot;)
+delle restanti parti di rame, tramite lo strumento &quot;Calcolare
+tratteggi&quot;.</p>
+<p>Nella finestra di conferma, assicuratevi che siano spuntate le opzioni
+&quot;contorno della scheda (disegno)&quot;, per far sì che lo svuotamento
+avvenga solo nei contorni definiti dal circuito, e &quot;Collegare tutte le
+linee&quot;, che evita inutili sollevamenti in Z durante l'operazione.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_15.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_15.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Purtroppo, CopperCam non è in grado di effettuare svuotamenti con
+movimenti che seguano i contorni delle tracce, quindi eseguirà la
+lavorazione per righe orizzontali o verticali. Se indicherete nella
+finestra Direzione &quot;ottimale&quot;, il programma calcolerà i percorsi per
+entrambe le direzioni, scegliendo quello più conveniente. Di contro,
+questa operazione di calcolo impiegherà più tempo per essere
+completata.Ora, se il risultato dell'anteprima vi soddisfa, passiamo
+alla fase finale.<strong>7 - Impostazione e salvataggio del G-Code</strong>Anzitutto,
+la prima volta che volete esportare il g-code dovrete settare i
+parametri relativi adatti per renderlo compatibile con il vostro
+programma di controllo (es. Mach3, CNC USB Controller...) selezionando
+il postprocessore corretto, e i giusti parametri relativi alla vostra
+macchina. Tutto ciò va fatto selezionando &quot;Formato di uscita&quot;, dal
+menù &quot;Parametri&quot;.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_16.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_16.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>Se volete utilizzare la fresatrice Aero in dotazione al nostro Fablab,
+potete ricopiare le impostazioni dall'immagine qua sopra.Quindi, per
+effettuare il salvataggio definitivo del g-code, dovrete cliccare sullo
+strumento &quot;Fresatura&quot;, nella barra in alto.</p>
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_17.png">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;coppercam_17.png"/>
+    </a>
+    
+    
+    
+</figure>
+<p>In questa finestra, dovrete assicurarvi che nella &quot;Sequenza&quot; siano
+presenti le sezioni: 1- Incisione 2- Forature (una o più sequenze) 3-
+Taglio e che siano associate agli utensili giusti e <u>nell'ordine
+giusto</u>.</p>
+<p>Attenzione all'opzione &quot;inversione X&quot;, da utilizzare solo se siete
+sicuri di quello che fate. Nel g-code risultante, add ogni &quot;Sequenza&quot;
+viene associato un utensile diverso, e quindi un cambio utensile. Se il
+programma di controllo è impostato correttamente, quindi, la macchina si
+fermerà alla fine di ogni fase, per consentirvi di sostituire la fresa e
+prendere una nuova quota Z0, prima di continuare.Quindi selezionate
+ancora il &quot;Punto zero XY&quot; come preferite, e come &quot;Punto zero Z&quot;
+impostate &quot;Superficie del circuito&quot;Cliccate quindi Ok, e salvate il
+vostro g-code.Complimenti, avete terminato!Ora, se volete sapere come
+andare avanti, tornate alla <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/creare-pcb-con-fresatrice/">Guida alla creazione di
+PCB</a>, ricominciando
+dalla Fase3.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

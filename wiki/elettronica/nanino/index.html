@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Nanino</h1>
+<div class="row">
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <p>L&#x27;arduino fresabile</p>
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;nanino.jpg"/>
+    
+    
+    <figcaption>Nanino in funzione</figcaption>
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/nanino/#descrizione">Descrizione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/nanino/#caricamento-sketch">Caricamento sketch</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/nanino/#limiti">Limiti</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/nanino/#realizzazione">Realizzazione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/nanino/#video-in-funzione">Video in funzione</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h2 id="descrizione">Descrizione</h2>
+<p><img src="https://wiki.fablabimperia.org/wiki/elettronica/nanino/Nanino_PCB_Layout.png" alt="miniatura|600x600px|Nanino PCB Layout" title="fig:miniatura|600x600px|Nanino PCB Layout" />
+Disponendo dei componenti elettronici necessari, è possibile ricreare un
+Arduino semplificato, ma perfettamente funzionante, su una breadboard o
+su una basetta millefori. Vista la spaziatura non standard dei pin,
+però, ricostruendo così un Arduino non ci si potrà mai realmente
+&quot;agganciare&quot; uno shield sopra, e questo è un grosso limite per lo
+sviluppo di progetti fai da te.</p>
+<p>Qualcuno però si è posto il problema di creare un progetto di PCB
+&quot;monofaccia&quot; riproducibile facilmente e l'ha chiamato
+<a href="http://vonkonow.com/wordpress/2012/10/nanino-the-diy-friendly-arduino/">Nanino</a>.
+Qualcun altro si è preso la briga di convertire il layout di questo
+progetto su Eagle, e noi del Fablab ci siamo presi la briga ottimizzarlo
+per la produzione con la fresatrice e apportare alcune modifiche e farne
+una versione piccola e una più grossa con possibilità di saldarci sopra
+altri componenti.</p>
+<p>Il risultato è che se ci serve un Arduino con il &quot;footprint&quot; classico
+dell'arduino UNO per far girare un progetto o uno shield, non siamo più
+costretti a comprare un &quot;vero&quot; Arudino, ma basta comprare il
+processore (spesso lo vendono con il bootloader già caricato) e
+pochissimi componenti, il tutto per una <a href="http://www.ebay.it/itm/Kit-Arduino-Atmel-Atmega328p-pu-con-componenti-/121642279074?hash=item1c5271e0a2">manciata di
+euro</a>.
+Si fresa la basetta, si fanno due saldature ed ecco pronto l'arduino
+per il nostro progetto. <img src="https://wiki.fablabimperia.org/wiki/elettronica/nanino/Nanino_Mini_PCB_Layout.png" alt="miniatura|600x600px|Nanino Mini PCB Layout" title="fig:miniatura|600x600px|Nanino Mini PCB Layout" /></p>
+<h2 id="caricamento-sketch">Caricamento sketch</h2>
+<p>L'unica grossa differenza rispetto a un Arduino &quot;vero&quot; è che, per
+semplicità, il Nanino non include l'intefaccia USB, quindi per caricare
+il nostro codice sul Nanino o per sfruttare la connessione seriale
+tramite PC è necessario utilizzare un piccolissimo programmatore FTDI,
+che si trova a circa 5€ su ebay, ma che è riutilizzabile all'infinito
+per tutti i nostri progetti, e dovrete anche saldare un condensatore
+aggiuntivo tra DTR e Pin1, come mostrato <a href="https://www.youtube.com/watch?v=hCl6oRFiVZo">in questo
+video</a>. Il programmatore
+FTDI è ovviamente presente al Fablab, per chi volesse utilizzarlo.</p>
+<h2 id="limiti">Limiti</h2>
+<p>Bisogna comunque precisare che il Nanino è un bell'esercizio per
+mettersi alla prova e imparare qualcosa di nuovo, ma non è la soluzione
+più economica né quella più rapida. Su internet si trovano cloni di
+arduino a prezzi irrisori, già belli pronti e prodotti con tecniche di
+qualtà industriali: niente di paragonabile a questo progetto un po'
+artigianale!</p>
+<h2 id="realizzazione">Realizzazione</h2>
+<p>Per realizzare il vostro Nanino potete scaricare i relativi <a href="https://github.com/fablabimperia/Nanino_clone-for-EagleCad">files per
+Eagle dal nostro canale
+GitHub</a>.</p>
+<figure>
+    
+
+    
+    <a href="http:&#x2F;&#x2F;i.imgur.com&#x2F;g8bpD72l.jpg">
+        <img src="http:&#x2F;&#x2F;i.imgur.com&#x2F;g8bpD72l.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>PCB del Nanino v. 0.8</figcaption>
+    
+</figure><h2 id="video-in-funzione">Video in funzione</h2>
+<div >
+    <iframe
+        src="https://www.youtube.com/embed/hCl6oRFiVZo"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div>
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Sensore temperatura DS18B20</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;sensore_temperatura.png"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/sensore-temperatura-ds18b20/#descrizione">Descrizione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/sensore-temperatura-ds18b20/#wiring">Wiring</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/sensore-temperatura-ds18b20/#caratteristiche">Caratteristiche</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/sensore-temperatura-ds18b20/#links-utili">Links utili</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="descrizione">Descrizione</h3>
+<p>Il sensore DS18B20 è una una sonda in grado di rilevare una temperatura
+compresa nel campo -55°C÷125°C con un'accuratezza di ±0.5°C nel campo
+-10°C÷85°C. Il campionamento della temperatura è effettuato su 12 bit in
+virgola fissa con 4 cifre decimali.</p>
+<p>Il trasferimento dei dati avviene tramite il protocollo proprietario
+&quot;1-wire&quot; che consente di collegarne tanti incascata perchè a ognuno è
+associato un ID univoco ed è possibile farlo funzionare anche solo con 2
+collegamenti in &quot;modalità parassita&quot;. Ecco lo spiegone (da qui):</p>
+<p>Dallas Semiconductor (now Maxim) produces a family of devices that are
+controlled through a proprietary 1-wire protocol. There are no fees for
+programmers using the Dallas 1-Wire (trademark) drivers. On a 1-Wire
+network, which Dallas has dubbed a &quot;MicroLan&quot; (trademark), a single
+&quot;master&quot; device communicates with one or more 1-Wire &quot;slave&quot; devices
+over a single data line, which can also be used to provide power to the
+slave devices.</p>
+<p>Il costo è circa di 3 euro l'uno. (1,5 euro dalla cina qui su ebay)</p>
+<h3 id="wiring">Wiring</h3>
+<p><imgur>mjDvvBJ.png</imgur></p>
+<h3 id="caratteristiche">Caratteristiche</h3>
+<ul>
+<li>Unique 1-Wire® interface requires only one port pin for
+communication</li>
+<li>Each device has a unique 64-bit serial code stored in an onboard ROM</li>
+<li>Multidrop capability simplifies distributed temperature sensing
+applications</li>
+<li>Requires no external components</li>
+<li>Can be powered from data line. Power supply range is 3.0V to 5.5V</li>
+<li>Measures temperatures from --55°C to +125°C (--67°F to +257°F)</li>
+<li>±0.5°C accuracy from --10°C to +85°C</li>
+<li>Thermometer resolution is user-selectable from 9 to 12 bits</li>
+<li>Converts temperature to 12-bit digital word in 750ms (max.)</li>
+<li>User-definable nonvolatile (NV) alarm settings</li>
+<li>Alarm search command identifies and addresses devices whose
+temperature is outside of programmed limits (temperature alarm
+condition)</li>
+<li>Applications include thermostatic controls, industrial systems,
+consumer products, thermometers, or any thermally sensitive system</li>
+</ul>
+<p>(da sparkfun.com)</p>
+<h3 id="links-utili">Links utili</h3>
+<p>Per ogni altra info bel tutorial in inglese</p>
+<ul>
+<li><a href="http://bildr.org/2011/07/ds18b20-arduino/">http://bildr.org/2011/07/ds18b20-arduino/</a></li>
+</ul>
+<p>Qui un tutorial in italiano</p>
+<ul>
+<li><a href="http://www.adrirobot.it/sensori/DS18B20/sensore_ds18b20_Arduino.htm">http://www.adrirobot.it/sensori/DS18B20/sensore_ds18b20_Arduino.htm</a></li>
+</ul>
+<p>Altro tutorial in inglese</p>
+<ul>
+<li><a href="http://www.hobbytronics.co.uk/ds18b20-arduino">http://www.hobbytronics.co.uk/ds18b20-arduino</a></li>
+</ul>
+<p>Qui tutorial per la lettura di diverse sonde su un unico pin dati.</p>
+<ul>
+<li><a href="http://arduino-info.wikispaces.com/Brick-Temperature-DS18B20">http://arduino-info.wikispaces.com/Brick-Temperature-DS18B20</a></li>
+</ul>
+<p>Qua la libreria</p>
+<ul>
+<li><a href="http://www.pjrc.com/teensy/arduino_libraries/OneWire.zip">http://www.pjrc.com/teensy/arduino_libraries/OneWire.zip</a></li>
+</ul>
+<p><a href="http://www.fablabimperia.wiki/w/images/4/40/DS18B20.pdf">Qui il
+datasheet</a></p>
+<p>Esiste anche una libreria per questo sensore appositamente realizzata da
+un altro sviluppatore che forse semplifica qualcosa.</p>
+<ul>
+<li><a href="http://milesburton.com/Dallas_Temperature_Control_Library">http://milesburton.com/Dallas_Temperature_Control_Library</a></li>
+</ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

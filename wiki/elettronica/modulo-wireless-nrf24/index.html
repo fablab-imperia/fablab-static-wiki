@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Modulo wireless NRF24</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;modulo_wireless_nrf24.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-nrf24/#tutorial">Tutorial</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-nrf24/#connessione-seriale">Connessione seriale</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-nrf24/#wiring-dei-pin">Wiring dei pin</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-nrf24/#altra-libreria">Altra libreria</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <p>ATTENZIONE: questi moduli lavorano a 3.3V, con i 5v si possono
+danneggiare.</p>
+<p>La scocciatura di queste schede è che i pin sono disposti su due file
+adiacenti e quindi non posso essere inserite in una breadboard senza
+cortocircuitarne qualcuno. Vanno usati fili volanti. Ne esistono diverse
+versioni, la cui differenza principale sta nella disposizione dei pin
+per la comunicazione con arduino. I pin da collegare variano anche in
+funzione della libreria che si vuole usare, visto che non ce n'è una
+ufficiale. La scheda con 10 pin ha il nome dei pin stampati direttamente
+sopra (cliccare immagine a fianco), mentre altre, come quelle a 8 pin
+che ho acquistato, non hanno indicazioni e quindi va seguito questo
+schema.</p>
+<h3 id="tutorial">Tutorial</h3>
+<ul>
+<li><a href="https://arduino-info.wikispaces.com/Nrf24L01-2.4GHz-HowTo">https://arduino-info.wikispaces.com/Nrf24L01-2.4GHz-HowTo</a></li>
+</ul>
+<h3 id="connessione-seriale">Connessione seriale</h3>
+<p>Il pin MISO significa Master In Slave Out mentre MOSI viceversa
+significa Master Out Slave In e vanno collegati credo obbligatoriamente
+ai corrispondenti su arduino (non si tratta di TX e RX). MISO e MOSI
+possono essere abbreviati MI e MO. La libreria MIRF, forse la migliore,
+è <a href="http://playground.arduino.cc/InterfacingWithHardware/Nrf24L01">disponibile
+qui</a> e
+con la libreria vengono forniti gli sketch di prova.</p>
+<h3 id="wiring-dei-pin">Wiring dei pin</h3>
+<p>{{#eimage:<a href="http://imgur.com/vmZDOVol.jpg%7Calt=">http://imgur.com/vmZDOVol.jpg%7Calt=</a>&quot;!!TITLE!!&quot;|320x280px|thumb|link=<a href="http://imgur.com/vmZDOVo.jpg%7Cleft%7CEsempio">http://imgur.com/vmZDOVo.jpg%7Cleft%7CEsempio</a>
+di realizzazione}}</p>
+<ul>
+<li>MISO -&gt; 12</li>
+<li>MOSI -&gt; 11</li>
+<li>SCK -&gt; 13</li>
+<li>CE -&gt; 8</li>
+<li>CSN -&gt; 7</li>
+</ul>
+<p>i pin CE e CSN credo si possano configurare a piacimento. Gli sketch di
+esempio li ho provati e funzionano. Trasferire dati sembra una cosa
+piu' complessa, sicuramente molto piu complessa rispetto alle XBee.</p>
+<p><br />
+=== Links utili ===</p>
+<ul>
+<li><a href="http://www.bajdi.com/playing-with-nrf24l01-modules/">Prova di comunicazione tra due
+schede.</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="http://arduino-for-beginners.blogspot.it/2013/06/arduino-serial-over-nrf24l01.html">Qui una spiegazione per effettuare una comunicazione tipo-seriale
+tra due
+nrf24</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="http://arduino-info.wikispaces.com/nRF24L01-Mirf-Examples">Altro esempio un po' incasinato di
+comunicazione</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="http://maniacbug.github.io/RF24Network/">Con questa libreria invece si possono creare reti peer to peer con
+queste schede</a> (non ho
+capito come)</li>
+</ul>
+<h3 id="altra-libreria">Altra libreria</h3>
+<p><a href="http://airspayce.com/mikem/arduino/NRF24/">http://airspayce.com/mikem/arduino/NRF24/</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

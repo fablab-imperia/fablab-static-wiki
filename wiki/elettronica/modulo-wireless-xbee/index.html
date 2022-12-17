@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Modulo wireless Xbee</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+
+    <img src="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;thumb&#x2F;1&#x2F;15&#x2F;XBee_Series_2_with_Whip_Antenna%2C_with_US_Quarter.jpg&#x2F;1024px-XBee_Series_2_with_Whip_Antenna%2C_with_US_Quarter.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#link-utili">Link utili</a>
+                
+                    <ul>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#arduino-fio-xbee">Arduino Fio + XBee</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#errori-comuni-con-le-xbee">Errori comuni con le XBEE</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#usb-to-xbee-card-pinout">USB to XBEE card pinout</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#raspberry-pi-e-xbee">Raspberry PI e Xbee</a>
+                                
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#sketch">Sketch</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-wireless-xbee/#alcuni-comandi-at">Alcuni comandi AT</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="link-utili">Link utili</h3>
+<ul>
+<li>Guida alla scelta e alla comprensione dei moduli XBee:</li>
+</ul>
+<p><a href="http://www.robot-italy.com/download/xbee/easy_bee.pdf">http://www.robot-italy.com/download/xbee/easy_bee.pdf</a></p>
+<ul>
+<li>Tabella di comparazione tra le prestazioni delle varie XBee:</li>
+</ul>
+<p><a href="http://www.parallax.com/go/xbee">http://www.parallax.com/go/xbee</a></p>
+<ul>
+<li>Pagina con moltissime info utili:</li>
+</ul>
+<p><a href="http://www.desert-home.com/p/the-world-of-xbee.html">http://www.desert-home.com/p/the-world-of-xbee.html</a></p>
+<h4 id="arduino-fio-xbee">Arduino Fio + XBee</h4>
+<ul>
+<li>Low power consumption</li>
+</ul>
+<p><a href="http://www.semifluid.com/2012/09/07/arduino-fio-low-power-setup/">http://www.semifluid.com/2012/09/07/arduino-fio-low-power-setup/</a></p>
+<p><a href="http://www.semifluid.com/2012/09/09/arduino-fio-internal-voltmeter-and-thermometer/">http://www.semifluid.com/2012/09/09/arduino-fio-internal-voltmeter-and-thermometer/</a></p>
+<ul>
+<li>Varie impostazioni per XBee</li>
+</ul>
+<p><a href="http://www.johnhenryshammer.com/WOW2/pagesHowTo/xbeeSeries1.php#index">http://www.johnhenryshammer.com/WOW2/pagesHowTo/xbeeSeries1.php#index</a></p>
+<p><a href="http://www.ladyada.net/make/xbee/ref.html">http://www.ladyada.net/make/xbee/ref.html</a></p>
+<h4 id="errori-comuni-con-le-xbee">Errori comuni con le XBEE</h4>
+<p><a href="http://www.faludi.com/projects/common-xbee-mistakes/">http://www.faludi.com/projects/common-xbee-mistakes/</a></p>
+<h4 id="usb-to-xbee-card-pinout">USB to XBEE card pinout</h4>
+<p><a href="http://www.robot-italy.com/it/xbee-usb-board.html">http://www.robot-italy.com/it/xbee-usb-board.html</a></p>
+<h4 id="raspberry-pi-e-xbee">Raspberry PI e Xbee</h4>
+<p><a href="http://tinajalabs.wordpress.com/2012/09/02/raspberry-pi-as-an-xbee-wireless-sensor-network-gateway/">http://tinajalabs.wordpress.com/2012/09/02/raspberry-pi-as-an-xbee-wireless-sensor-network-gateway/</a></p>
+<p><a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?t=43915&amp;p=413364">http://www.raspberrypi.org/phpBB3/viewtopic.php?t=43915&amp;p=413364</a></p>
+<p><a href="http://www.desert-home.com/2013/09/raspberry-pi-and-xbee.html">http://www.desert-home.com/2013/09/raspberry-pi-and-xbee.html</a></p>
+<p><a href="http://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-xbee">http://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-xbee</a></p>
+<h3 id="sketch">Sketch</h3>
+<p>uno è un blink leggermente modificato che manda &quot;H&quot; e &quot;L&quot; in seriale
+quando si accende e si spegne il link:
+<a href="/files/Blink_serial.txt">download</a></p>
+<p>l' altro sketch legge solo la seriale e accende e spegne il led quando
+riceve H e L sulla sua seriale:
+<a href="/files/Blink_remote.txt">download</a></p>
+<p>Sono comodi per verificare funzionamento base.</p>
+<h3 id="alcuni-comandi-at">Alcuni comandi AT</h3>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>ATBD 3 = 9600 baud
+</span><span>ATBD 6 = 57600 baud
+</span><span>ATWR = scrivi sul firmware
+</span><span>ATRE = ritorna alle impostazioni di fabbrica
+</span><span>ATSM = Sleep modes (vedi link sopra)
+</span></code></pre>
+
+</div>
+
+
+    </div>
+</body>
+</html>

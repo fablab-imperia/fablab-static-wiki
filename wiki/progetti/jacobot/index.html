@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Jacobot</h1>
+<div class="row">
+    
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/jacobot/#descrizione">Descrizione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/jacobot/#componenti">Componenti</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/jacobot/#programmazione-e-alimentazione">Programmazione e alimentazione</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/progetti/jacobot/#fase-di-test">Fase di test</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="descrizione">Descrizione</h3>
+<p>Jacobot è un prototipo di smart-car autonoma programmata tramite una
+scheda Arduino. A questa smart-car possono essere aggiunti sensori e
+dispositivi di output che possono essere utili per visualizzarne lo
+stato.</p>
+<h3 id="componenti">Componenti</h3>
+<p>La Smart-Car Jacobot, nella sua composizione iniziale, è composta da:</p>
+<ul>
+<li>Un telaio metallico e 4 ruote con copertura in gomma</li>
+<li>4 Motori DC da 5V</li>
+<li>Una scheda Arduino UNO</li>
+<li>Un Motor-shield (clone Adafruit)</li>
+<li>Una batteria Nh-MH da 2000 mA</li>
+<li>Un sensore di prossimità a ultrasuoni</li>
+<li>Un display a matrice di led 8x8</li>
+</ul>
+<h3 id="programmazione-e-alimentazione">Programmazione e alimentazione</h3>
+<p>Per alimentare la smart-car è necessario fornire al motor-shield una
+tensione sufficiente ad alimentare tutti i componenti installati. La
+scheda arduino può essere alimentata in modo &quot;parassita&quot; dal
+motorshield, ma questo è poco consigliabile in quanto gli sbalzi di
+tensione provocati dall'attivazione dei motori possono provocare dei
+reset del microchip che controlla l'arduino. Per questa ragione abbiamo
+provveduto a implementare un by-pass che alimenta direttamente la scheda
+arduino sull'apposito connettore DC.</p>
+<p>La programmazione dello shield può avvenire collegando il classico cavo
+USB all'apposito connettore sulla scheda arduino, che si fa carico di
+tenere i diversi circuiti di alimentazione separati.</p>
+<p>Per governare il motor-shield abbiamo scelto la libreria AFMotor, mentre
+per il sensore di prossimità la libreria NewPing. Per la matrice di led
+è disponibile la libreria LedControl, che tuttavia inizialmente non
+abbiamo utilizzato.</p>
+<h3 id="fase-di-test">Fase di test</h3>
+<p>Abbiamo anzitutto cercato di capire come comandare il motor-shield
+utilizzando la libreria AFMotor, e abbiamo creato alcune funzioni allo
+scopo di testare i movimenti base, come l'avanzamento, la retromarcia e
+le rotazioni. Per questo abbiamo cercato di definire il valore di
+tensione della batteria necessario ad alimentare i motori, che aumentano
+la loro velocità di rotazione a seconda del valore di tensione (Volt)
+che gli viene fornita dal motor shield.</p>
+<p>Ci siamo poi accorti che non è molto semplice ottenere delle risposte
+completamente affidabili dai motori utilizzando il motorshield a nostra
+disposizione (è disponibile in commercio una versione migliorata), e
+questo ci ha costretto a prolungare i test iniziali.</p>
+<p>Il comportamento maggiormente affidabile lo abbiamo ottenuto impostando
+un parametro di frequenza a 64KHz:</p>
+<p><code>AF_DCMotor motor1(1, MOTOR12_64KHZ);</code></p>
+<p>Inoltre abbiamo notato che per motivi non chiari, pur comandando allo
+stesso modo tutti i motori, la smart-car aveva una tendenza a
+&quot;sterzare&quot; verso destra anche durante la marcia rettilinea. Per tale
+motivo, dopo alcuni test, abbiamo introdotto un parametro di correzione
+aumentando di una piccola frazione la velocità sulle ruote del lato
+destro:</p>
+<p><code>#define RIGHT_SIDE_SLOWNESS_COMPENSATION 1.14f </code></p>
+<p>Per poter comandare la smart-car a muoversi di una certa distanza,
+abbiamo dovuto inserire i dati della circonferenza delle ruote e
+correlarli con il tempo di avanzamento richiesto.</p>
+<p>Allo stesso modo, per poter eseguire le rotazioni nel modo desiderato, è
+stato necessario definire un tempo di avanzamento da mettere in
+relazione con l'angolo di rotazione che si vuole ottenere.</p>
+<p>Alla fine dei test i parametri avanzamento e rotazione ottenuti sono
+stati:</p>
+<pre data-lang="{.c++ .numberLines}" style="background-color:#2b303b;color:#c0c5ce;" class="language-{.c++ .numberLines} "><code class="language-{.c++ .numberLines}" data-lang="{.c++ .numberLines}"><span>//Circa 1 giro/s a 100
+</span><span>//Circa 20 cm di circonferenza ruota
+</span><span>//Circa 20 cm/s a 200
+</span><span>//Circa 10 cm/s a 100
+</span><span>//Circa 10 cm raggio macchina
+</span><span>
+</span><span>#define LINEAR_SPEED 25
+</span><span>#define DESIRED_POWER_TO_MOTORS 150
+</span><span>
+</span><span>#define CAR_RADIUS 8.0f
+</span></code></pre>
+
+</div>
+
+
+    </div>
+</body>
+</html>

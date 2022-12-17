@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Modulo bluetooth JYMCU</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+
+    <img src="https:&#x2F;&#x2F;img.dxcdn.com&#x2F;productimages&#x2F;sku_104299_2.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-bluetooth-jymcu/#sketch-wiring">Sketch &amp; Wiring</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-bluetooth-jymcu/#links-utili">Links utili</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-bluetooth-jymcu/#manuale-fornito">Manuale fornito</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-bluetooth-jymcu/#at-commands">AT Commands</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="sketch-wiring">Sketch &amp; Wiring</h3>
+<div>
+<p><a href="http://www.fablabimperia.wiki/w/images/1/15/Bluetooth.ino">Sketch</a> per
+ricezione/invio con arduino via bluetooh al posto della seriale.<br />
+Ecco i collegamenti ad arduino:<br />
+<img src="https://wiki.fablabimperia.org/wiki/elettronica/modulo-bluetooth-jymcu/Arduinobluetooth.png" alt="wiring" title="fig:wiring" /></p>
+<h3 id="links-utili">Links utili</h3>
+<ul>
+<li><a href="http://reprap.org/wiki/Jy-mcu">How to 3D Print via Bluetooth</a></li>
+<li><a href="http://wiki.pinguino.cc/index.php/Interfacing_with_Bluetooth_JY-MCU">Interfacing Pinguino with Bluetooth
+JY-MCU</a></li>
+</ul>
+<h3 id="manuale-fornito">Manuale fornito</h3>
+<div>
+<p><a href="http://www.fablabimperia.wiki/w/images/8/80/BT_manual-1-.pdf">Link al
+pdf</a></p>
+<div>
+<div>
+<h3 id="at-commands">AT Commands</h3>
+<p>Da <a href="http://byron76.blogspot.it/2011/09/one-board-several-firmwares.html">http://byron76.blogspot.it/2011/09/one-board-several-firmwares.html</a></p>
+<blockquote>
+<p><code>           ...boards seem identical, they had different firmwares. </code><br />
+<code>The suntekstore ones has HC05 firmware, the DealExtreme ones has linvor</code></p>
+<p><code>           1.5 firmware.</code><br />
+<code>           The differences between them is mainly the AT command</code><br />
+<code>           set.</code><b><u><code>Linvor 1.5</code></u><code> </code></b><code>also known as </code><b><code>HC06</code></b><br />
+<code>           This firmware offers a very limited set of AT command.</code><br />
+<code>           By default the baudrate is 9600 8N1.</code></p>
+<p><code>           For this firmware you have to </code><b><code>not </code></b><code>send LF or CR</code><br />
+<code>           character at the end of your AT command.AT programming mode is up</code><br />
+<code>           when your board is not paired by bluetooth devices. For this</code><br />
+<code>           firmware, you have to copy/paste AT command since timings is</code><br />
+<code>           important. You can send about one command per second.</code></p>
+<table cellpadding="2" cellspacing="0">
+<tr>
+<td style="border-bottom-width:1pt;border-style:solid none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-top-width:1pt;border-top-color:rgb(128,128,128);padding:0.05cm 0cm 0.05cm 0.05cm" width="127">
+<div align="center" style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><b><code>Command</code></b></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:solid none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-top-width:1pt;border-top-color:rgb(128,128,128);padding:0.05cm 0cm 0.05cm 0.05cm" width="148">
+<div align="center" style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><b><code>Response</code></b></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border:1pt solid rgb(128,128,128);padding:0.05cm" width="327">
+<div align="center" style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><b><code>Note</code></b></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="127">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>AT</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="148">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>OK</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-right-width:1pt;border-right-color:rgb(128,128,128);padding:0cm 0.05cm 0.05cm" width="327">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Usefull to check connection and </code><br />
+<code>                        baudrate</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="127">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>AT+VERSION</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="148">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Linvor1.5</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-right-width:1pt;border-right-color:rgb(128,128,128);padding:0cm 0.05cm 0.05cm" width="327">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Get the version of the</code><br />
+<code>                       module</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="127">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>AT+BAUD</code><span style="color:red"><code>x</code></span></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="148">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>OK</code><span style="color:rgb(255,204,0)"><code>yyyy</code></span></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-right-width:1pt;border-right-color:rgb(128,128,128);padding:0cm 0.05cm 0.05cm" width="327">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Set the baudrate :</code></span></span><br />
+<code>                   </code></p>
+</div>
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:small"><code>x</code></span></span></span><code> </code><span style="font-family:Courier"><span style="font-size:small"><code>can</code><br />
+<code>                       take the following values :</code></span></span><br />
+<code>                   </code></p>
+</div>
+<ul>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>1</code></span></span></span><code> </code><span style="font-family:Courier"><span style="font-size:x-small"><code>for </code></span></span><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>1200</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>2</code></span></span></span><code> </code><br />
+<code>                                  </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>2400</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps</code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>3</code></span></span></span><code>  </code><br />
+<code>                                 </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>4800</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>4</code></span></span></span><code>  </code><br />
+<code>                                 </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>9600</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>5</code></span></span></span><code>  </code><br />
+<code>                                </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>19200</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>6</code></span></span></span><code>  </code><br />
+<code>                                </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>38400</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>7</code></span></span></span><code>  </code><br />
+<code>                                </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>57600</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>8</code></span></span></span><code>   </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>115200</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>9</code></span></span></span><code>   </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>230400</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>A</code></span></span></span><code>   </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>460800</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>B</code></span></span></span><code>   </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>921600</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps </code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+<li><div style="border:none;padding:0cm">
+<p><code>                               </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:x-small"><code>C</code></span></span></span><code>  </code><span style="color:rgb(255,204,0)"><span style="font-family:Courier"><span style="font-size:x-small"><code>1382400</code></span></span></span><span style="color:blue"><span style="font-family:Courier"><span style="font-size:x-small"><code> </code></span></span></span><span style="font-family:Courier"><span style="font-size:x-small"><code>bps</code></span></span><br />
+<code>                           </code></p>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="127">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>AT+NAME</code><span style="color:red"><code>String</code></span></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="148">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>OKsetname</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-right-width:1pt;border-right-color:rgb(128,128,128);padding:0cm 0.05cm 0.05cm" width="327">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Change bluetooth device name</code><br />
+<code>                       :</code></span></span><br />
+<code>                   </code></p>
+</div>
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>String can be any string you want !</code><br />
+<code>                       be creative !! (20 characters limited)</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="127">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>AT+PIN</code><span style="color:red"><code>xxxx</code></span></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);padding:0cm 0cm 0.05cm 0.05cm" width="148">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>OKsetpin</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+<td style="border-bottom-width:1pt;border-style:none solid solid;border-bottom-color:rgb(128,128,128);border-left-width:1pt;border-left-color:rgb(128,128,128);border-right-width:1pt;border-right-color:rgb(128,128,128);padding:0cm 0.05cm 0.05cm" width="327">
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="font-family:Courier"><span style="font-size:small"><code>Set the bluetooth pincode</code><br />
+<code>                       :</code></span></span><br />
+<code>                   </code></p>
+</div>
+<div style="border:none;padding:0cm">
+<p><code>                       </code><span style="color:red"><span style="font-family:Courier"><span style="font-size:small"><code>1234</code></span></span></span><code> </code><span style="font-family:Courier"><span style="font-size:small"><code>by</code><br />
+<code>                       default</code></span></span><br />
+<code>                   </code></p>
+</div>
+</td>
+</tr>
+</table>
+<div>
+<p><code>           And that's it !!! No other AT command.</code><br />
+<code>       </code></p>
+</div>
+</blockquote>
+<p>vedere anche dallo stesso blog:</p>
+<ul>
+<li><a href="http://byron76.blogspot.it/2011/09/hc05-firmware.html">HC05
+Firmware</a></li>
+<li><a href="http://byron76.blogspot.it/2011/09/upgrade-your-bluetooth-module.html">Upgrade your bluetooth
+module</a></li>
+</ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

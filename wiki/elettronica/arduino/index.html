@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Arduino - Genuino</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+
+    <img src="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;3&#x2F;38&#x2F;Arduino_Uno_-_R3.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#info-generiche">Info generiche</a>
+                
+                    <ul>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#usare-i-pin-low-come-gnd">Usare i pin LOW come GND?</a>
+                                
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#arduino-fio-xbee">Arduino Fio + Xbee</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#arduino-leonardo">Arduino Leonardo</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#tipi-di-variabili-in-arduino">Tipi di variabili in Arduino</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#le-funzioni">Le funzioni</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#le-union">Le Union</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/arduino/#gli-interrupt">Gli Interrupt</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h1 id="info-generiche">Info generiche</h1>
+<ul>
+<li>Links utili
+<ul>
+<li><a href="http://www.robot-italy.com/it/blog/progetti/450">Schemi Pinout di tutte le schede ufficiali Arduino e relativi
+microcontrollori</a></li>
+<li><a href="http://tronixstuff.wordpress.com/tutorials/">Tutorial di tutti i
+tipi!</a></li>
+<li><a href="http://miscsolutions.wordpress.com/2011/10/16/five-things-i-never-use-in-arduino-projects/">Cose che è meglio evitare negli sketch di
+arduino</a></li>
+<li><a href="http://www.open-electronics.org/arduino-isp-in-system-programming-and-stand-alone-circuits/">Arduino ISP (In System Programming) and stand-alone
+circuits</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="usare-i-pin-low-come-gnd">Usare i pin LOW come GND?</h2>
+<p>Leggendo uno schema elettrico sul pdf che ci ha passato Stefano ho trovato un circuito a mio avviso un po' strano dove il pin 13 di arduino impostato come output, quando è settato LOW funziona come pin GND.
+Incuriosito ho replicato il circuito e in effetti funziona, perchè in sostanza quello che conta è la differenza di potenziale.
+Però mi sono documentato e ho scoperto che in teoria sarebbe possibile usare sempre i pin output di arduino settati LOW come ground ma il punto è: conviene farlo? a quanto pare è meglio di no.
+Infatti questi pin possono sopportare una corrente inversa al massimo di 30-40mA, un po' pochino... quindi, a meno di non voler sfruttare questa possiblità per pilotare dei semplici led (l'esempio sul libro faceva proprio questo), è sempre meglio ricorrere alla GND migliore possibile a disposizione, cioè il pin apposito.
+Qui trovate i dettagli:<br />
+<a href="http://arduino.cc/forum/index.php/topic,19044.0.html">http://arduino.cc/forum/index.php/topic,19044.0.html</a></p>
+<h1 id="arduino-fio-xbee">Arduino Fio + Xbee</h1>
+<ul>
+<li>Low power consumption
+<a href="http://www.semifluid.com/2012/09/07/arduino-fio-low-power-setup/">1</a>
+<a href="http://www.semifluid.com/2012/09/09/arduino-fio-internal-voltmeter-and-thermometer/">2</a></li>
+</ul>
+<h1 id="arduino-leonardo">Arduino Leonardo</h1>
+<ul>
+<li><a href="https://sites.google.com/site/stevalenr/wiki/arduino-generico/arduino-leonardo/differenze-con-la-uno-e-problemi-di-upload">Differenze rispetto a ArduinoUNO, e problemi di
+upload</a></li>
+</ul>
+<h1 id="tipi-di-variabili-in-arduino">Tipi di variabili in Arduino</h1>
+<p>Tratto dal tutorial <a href="https://learn.sparkfun.com/tutorials/data-types-in-arduino">Sparkfun: Introduction to data types in the
+Arduino</a></p>
+<ul>
+<li><strong>boolean</strong> (8 bit)- simple logical true/false.</li>
+<li><strong>byte</strong> (8 bit)- unsigned number from 0-255.</li>
+<li><strong>char</strong> (8 bit)- signed number from -128 to 127. The compiler will
+attempt to interpret this data type as a character in some
+circumstances, which may yield unexpected results.</li>
+<li><strong>unsigned char</strong> (8 bit)- same as 'byte'; if this is what you're
+after you should use 'byte' instead, for reasons of clarity.</li>
+<li><strong>word</strong> (16 bit)- unsigned number from 0-65535.</li>
+<li><strong>unsigned int</strong> (16 bit)- the same as 'word'. Use 'word' for
+clarity and brevity.</li>
+<li><strong>int</strong> (16 bit)- signed number from -32768 to 32767. This is most
+commonly what you see used for general purpose variables in Arduino
+example code provided with the IDE.</li>
+<li><strong>unsigned long</strong> (32 bit)- unsigned number from 0-4,294,967,295.
+The most common usage of this is to store the result of the millis()
+function, which returns the number of milliseconds the current code
+has been running.</li>
+<li><strong>long</strong> (32 bit)- signed number from -2,147,483,648 to
+2,147,483,647.</li>
+<li><strong>float</strong> (32 bit)- signed number from -3.4028235E38 to
+3.4028235E38. Floating point on the Arduino is not native; the
+compiler has to jump through hoops to make it work. If you can avoid
+it, you should. I'll touch on it later; a more thorough tutorial on
+the general use of decimal point math in the Arduino will follow at
+a later date.</li>
+</ul>
+<h1 id="le-funzioni">Le funzioni</h1>
+<p><a href="https://www.arduino.cc/en/Reference/FunctionDeclaration">https://www.arduino.cc/en/Reference/FunctionDeclaration</a></p>
+<h1 id="le-union">Le Union</h1>
+<p>Le union sono utili per convertire variabili grosse in piu' bytes o
+ricavarle da dati seriali.</p>
+<p>Tutorial: <a href="http://forum.arduino.cc/index.php?PHPSESSID=qdqli9tdavp0mrv6s92kl8jka6&amp;topic=43222.msg313148#msg313148">1</a>, <a href="http://www.utopiamechanicus.com/article/data-splitting-union-and-struct-c/">2</a></p>
+<p>Esempio:</p>
+<pre data-lang="{.cpp .numberLines}" style="background-color:#2b303b;color:#c0c5ce;" class="language-{.cpp .numberLines} "><code class="language-{.cpp .numberLines}" data-lang="{.cpp .numberLines}"><span>float snelheid;
+</span><span>
+</span><span>union u_tag {
+</span><span>    byte b[4];
+</span><span>    float fval;
+</span><span>} u;
+</span><span>
+</span><span>u.b[0] = snelheidArray[0];
+</span><span>u.b[1] = snelheidArray[1];
+</span><span>u.b[2] = snelheidArray[2];
+</span><span>u.b[3] = snelheidArray[3];
+</span><span>
+</span><span>snelheid = u.fval;
+</span></code></pre>
+<h1 id="gli-interrupt">Gli Interrupt</h1>
+<p>a volte capita di voler far stare arduino in &quot;ascolto&quot; di un evento
+che può verificarsi casualmente, ma che è difficile captare perchè in
+quel frangente potrebbero essere in esecuzione altre funzioni. E'
+possibile gestire agevolmente questi eventi servendosi degli interrupt,
+ovvero delle &quot;interrupt service routine&quot;. Si impostano cioè degli
+eventi che se accadono su determinati pin (tipicamente un paio, il 2 e
+il 3), interrompono quello che sta facendo arduino e mandano in
+esecuzione immediatamente una certa funzione pre-impostata.</p>
+<p>Mi sembra una funzione molto utile che che finora non era uscita. Io la
+userò per &quot;acchiappare&quot; gli impulsi dei sensori di velocità del vento
+e della pioggia per calcolarne le intensità. Le funzioni attaccate al
+pin dell'interrupt hanno alcune limitazioni, in particolare al loro
+interno non funzionano i delay e i valori restituiti da millis() non
+incrementano. Inoltre le variabili usate al loro interno vanno definite
+come &quot;volatile&quot; il che se ho ben capito significa che vengono scritte
+e lette direttamente dalla ram e non su altri registri (il motivo è che
+durante l'interrupt arduino esce dal loop).</p>
+<ul>
+<li><a href="http://arduino.cc/en/Reference/attachInterrupt">qui i dettagli</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="http://arduino.cc/en/Reference/Volatile">qui i dettagli delle variabili
+&quot;volatile&quot;</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="http://www.maffucci.it/2012/06/11/appunti-su-arduino-interrupts/">qui un
+tutorial</a></li>
+</ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

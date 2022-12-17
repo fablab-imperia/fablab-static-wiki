@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>ATtiny25&#x2F;45&#x2F;85</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+
+    <img src="https:&#x2F;&#x2F;www.electronicscomp.com&#x2F;image&#x2F;cache&#x2F;catalog&#x2F;attiny85-microcontroller-india-400x400.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/attiny/#programmazione-attiny85-tramite-arduino">Programmazione Attiny85 tramite Arduino</a>
+                
+                    <ul>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/attiny/#programmazione-tramite-breadboard">Programmazione tramite breadboard</a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://wiki.fablabimperia.org/wiki/elettronica/attiny/#programmazione-tramite-shield-al-fablab">Programmazione tramite shield al Fablab</a>
+                                
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h1 id="programmazione-attiny85-tramite-arduino">Programmazione Attiny85 tramite Arduino</h1>
+<h2 id="programmazione-tramite-breadboard">Programmazione tramite breadboard</h2>
+<p>Perché acquistare un programmatore per la Attiny quando si può sfruttare
+Arduino al suo posto?</p>
+<h3 id="strumentazione-necessaria">Strumentazione necessaria</h3>
+<ul>
+<li>Arduino UNO con cavo di collegamento al PC</li>
+<li>PC con Arduino IDE</li>
+<li>una basetta di prototipazione (breadboard)</li>
+<li>Sei cavi jumper maschio-maschio</li>
+</ul>
+<h3 id="preparazione-ide">Preparazione IDE</h3>
+<ol>
+<li>Andare su File &gt; Impostazioni</li>
+<li>Copiare <a href="https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json">questo
+link</a>
+in &quot;Url aggiuntive per il gestore schede&quot;</li>
+<li>Andare in Strumenti &gt; Scheda &gt; Gestore schede e scaricare &quot;attiny
+by Davis A. Mellis&quot;</li>
+</ol>
+<h3 id="far-funzionare-arduino-come-un-programmatore">Far funzionare Arduino come un programmatore</h3>
+<p>Sempre dall'ambiente di sviluppo Arduino:</p>
+<ol>
+<li>File &gt; Esempi &gt; ArduinoISP &gt; ArduinoISP</li>
+<li>Connettere Arduino al PC</li>
+<li>Verificare che sia selezionata Arduino UNO nella schermata
+Strumenti&gt;Scheda</li>
+<li>Caricare l'esempio appena aperto su Arduino</li>
+</ol>
+<h3 id="collegamenti-da-mettere-a-punto">Collegamenti da mettere a punto</h3>
+<p>Per non sbagliare, fa' riferimento ai fogli plastificati con la
+piedinatura che trovi al Fablab.</p>
+<table class='page-table'><thead><tr><th>Piedino Arduino</th><th>Piedino Attiny85</th></tr></thead><tbody>
+<tr><td>5 Volt</td><td>Vcc</td></tr>
+<tr><td>Massa</td><td>GND</td></tr>
+<tr><td>13</td><td>2</td></tr>
+<tr><td>12</td><td>1</td></tr>
+<tr><td>11</td><td>0</td></tr>
+<tr><td>10</td><td>Reset</td></tr>
+</tbody></table>
+<h3 id="completamento-impostazione-ide-e-scrittura-bootloader">Completamento impostazione IDE e scrittura bootloader</h3>
+<ol>
+<li>Strumenti &gt; Scheda &gt; Attiny</li>
+<li>Strumenti &gt; Clock &gt; 8Mhz (internal)</li>
+<li>Strumenti &gt; Programmatore &gt; Arduino as ISP</li>
+<li>Strumenti &gt; Scrivi il bootloader</li>
+</ol>
+<h3 id="caricare-i-propri-programmi">Caricare i proprî programmi</h3>
+<p>Ora si potranno caricare i propri programmi sulla Attiny lasciando
+indicato &quot;Programmatore: Arduino as ISP&quot;, ossia diciamo all'ambiente
+Arduino di non caricare i programmi nella Arduino, ma di sfruttare la
+Arduino come semplice programmatore &quot;ponte&quot;.</p>
+<h2 id="programmazione-tramite-shield-al-fablab">Programmazione tramite shield al Fablab</h2>
+<p>Si può semplificare il processo usando lo shield presente al Fablab nel
+cassettino &quot;shield vari&quot; del banco elettronica. Dopo aver incastrato
+lo shield, è necessario inserire correttamente la Attiny sul supporto.
+Per farlo, è sufficiente disporre il piedino RESET della attiny
+all'angolo dell'adesivo R.
+<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;attiny_shield.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;attiny_shield.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Shield per Attiny85 del Fablab</figcaption>
+    
+</figure></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

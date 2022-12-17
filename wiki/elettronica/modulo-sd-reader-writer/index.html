@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Modulo SD reader&#x2F;writer</h1>
+<div class="row">
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <p>Modulo per lettura-scrittura su schede SD per immagazzinamento dati</p>
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;SdReaderWriter.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-sd-reader-writer/#collegamenti">Collegamenti</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/elettronica/modulo-sd-reader-writer/#sketch">Sketch</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <h3 id="collegamenti">Collegamenti</h3>
+<p>(come da esempi da IDE arduino):</p>
+<ul>
+<li>MOSI - pin 11</li>
+<li>MISO - pin 12</li>
+<li>CLK - pin 13</li>
+<li>CS - pin 4</li>
+</ul>
+<p>+GND +5 / 3.3V</p>
+<h3 id="sketch">Sketch</h3>
+<p>Si possono usare tranquillamente gli sketch di esempio sotto la
+categoria SD. Basta solo ricordarsi di impostare il pin CS corretto nel
+codice, nel nostro caso con arduino UNO è 4 ma cambia a seconda della
+scheda e possono esserci differenze negli sketch di esempio. es.:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>// change this to match your SD shield or module;
+</span><span>// Arduino Ethernet shield: pin 4
+</span><span>// Adafruit SD shields and modules: pin 10
+</span><span>// Sparkfun SD shield: pin 8
+</span><span>// Teensy 2.0: pin 0
+</span><span>// Teensy++ 2.0: pin 20
+</span></code></pre>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Fablab Wiki</title>
+    <link rel="stylesheet" href="/wiki/static/style.css">
+    <link rel="stylesheet" href="/wiki/static/mini-default.min.css">
+    <link rel="stylesheet" href="/wiki/static/forkawesome/css/fork-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    <a href="/wiki" class="logo">Home</a>
+    <a class="button" href="https://github.com/fablab-imperia/fablab-static-wiki">
+        Modifica&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </a>
+    
+</header>
+    <div class="container">
+        
+<h1>Parametri di lavorazione CNC</h1>
+<div class="row">
+    
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="contenitore_anteprima">
+            
+            
+
+<figure>
+    
+        
+    
+
+    <img src="&#x2F;wiki&#x2F;immagini&#x2F;AeroCNC_su_legno.jpg"/>
+    
+    
+</figure>
+
+
+            
+        </div>
+    </div>
+    
+</div>
+
+
+<hr>
+
+<div class="toc-container">
+    <div style="font-weight: bold;">Indice:</div>
+    <ul>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#metacrilato-pmma">METACRILATO (PMMA)</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#legno-di-faggio-listellare">LEGNO DI FAGGIO LISTELLARE</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#legno-multistrato-compensato">LEGNO MULTISTRATO (compensato)</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#alluminio-lega-imprecisata">ALLUMINIO (lega imprecisata)</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#dibond">DIBOND</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#forex">FOREX</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#pcb-basette-ramate-per-circuiti">PCB (basette ramate per circuiti)</a>
+                
+            </li>
+        
+            <li>
+                <a href="https://wiki.fablabimperia.org/wiki/attrezzature/fresatrice/parametri-lavorazione/#carico-per-dente">Carico per dente</a>
+                
+            </li>
+        
+        </ul>
+</div>
+    
+
+<div class="content">
+    <p><strong>Tabella di riferimento velocità Kress 1050 FME-1 / RPM</strong></p>
+<table class='page-table'><thead><tr><th>Valore potenziometro</th><th>R.P.M (giri al minuto)</th></tr></thead><tbody>
+<tr><td>1</td><td>5.000</td></tr>
+<tr><td>2</td><td>7.700</td></tr>
+<tr><td>3</td><td>12.500</td></tr>
+<tr><td>4</td><td>16.500</td></tr>
+<tr><td>5</td><td>21.000</td></tr>
+<tr><td>6</td><td>25.000</td></tr>
+</tbody></table>
+<h3 id="metacrilato-pmma">METACRILATO (PMMA)</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="http://www.ebay.it/itm/151832710355">Endmill 3,0 mm</a>, 1 tagliente</td><td>18.000</td><td>1600</td><td>700</td><td>0,5</td><td>1,25</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_pmma_AERO.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_pmma_AERO.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Trucioli</figcaption>
+    
+</figure></td></tr>
+<tr><td>Endmill 1,5-2 mm, 1 tagliente</td><td>20.000</td><td>1200</td><td>500</td><td>0,5</td><td>0,8-1</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_pmma_1.5.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_pmma_1.5.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Trucioli PMMA 1.5mm</figcaption>
+    
+</figure></td></tr>
+</tbody></table>
+<h3 id="legno-di-faggio-listellare">LEGNO DI FAGGIO LISTELLARE</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="http://www.ebay.it/itm/151832710355">Endmill 3,175 mm</a>, 1 tagliente</td><td>20.000</td><td>1200</td><td>500</td><td>0,7</td><td>2</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_faggio_listellare.jpeg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_faggio_listellare.jpeg"/>
+    </a>
+    
+    
+    
+    <figcaption>Trucioli durante la lavorazione</figcaption>
+    
+</figure></td></tr>
+<tr><td>Endmill 6mm, 2 taglienti</td><td>12.000</td><td>1500</td><td>500</td><td>0,5</td><td>3</td><td></td></tr>
+</tbody></table>
+<h3 id="legno-multistrato-compensato">LEGNO MULTISTRATO (compensato)</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="http://www.ebay.it/itm/151832710355">Endmill 3,175 mm</a> - 1 tagliente</td><td>18.000</td><td>1200</td><td>500</td><td>0,7</td><td>2</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_legno_multistrato.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_legno_multistrato.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Trucioli</figcaption>
+    
+</figure></td></tr>
+<tr><td>Bulino diametro in base 1mm x 30°</td><td>22000</td><td>800</td><td>300</td><td>0,2</td><td>2</td><td></td></tr>
+</tbody></table>
+<h3 id="alluminio-lega-imprecisata">ALLUMINIO (lega imprecisata)</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td>Endmill da 5 mm - 1 tagliente</td><td>12.000</td><td>600</td><td>150(in rampa)</td><td>0,7</td><td>0,25</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;Pannello_Mixer_in_alluminio.jpeg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;Pannello_Mixer_in_alluminio.jpeg"/>
+    </a>
+    
+    
+    
+    <figcaption>Esempio di lavorazione a secco</figcaption>
+    
+</figure></td></tr>
+<tr><td><a href="http://www.ebay.it/itm/151832710355">Endmill da 3mm</a> - 1 tagliente</td><td>18.000</td><td>250</td><td>100(in rampa)</td><td>0,7</td><td>0,2</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;Lavorazione_e_trucioli_alluminio_fresa_piccola.jpeg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;Lavorazione_e_trucioli_alluminio_fresa_piccola.jpeg"/>
+    </a>
+    
+    
+    
+    <figcaption>Lavorazione e trucioli alluminio fresa piccola (a secco)</figcaption>
+    
+</figure></td></tr>
+<tr><td>Endmill da 4 mm - 2 taglienti</td><td>12.000</td><td>600</td><td>150(in rampa)</td><td>0,7</td><td>0,25</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;alluminio_con_lubrificazione.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;alluminio_con_lubrificazione.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Usare affondi in rampa e lubrificazione</figcaption>
+    
+</figure></td></tr>
+</tbody></table>
+<h3 id="dibond">DIBOND</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="http://cnc-plus.de/en/End-Mills-266/2-Flute-down-cut-275/">Fresa spingente</a> da 2mm</td><td>16.500</td><td>1000</td><td>300</td><td>0,7</td><td>0,5</td><td><figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;Dibond_con_trucioli.jpeg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;Dibond_con_trucioli.jpeg"/>
+    </a>
+    
+    
+    
+</figure></td></tr>
+</tbody></table>
+<h3 id="forex">FOREX</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="http://www.ebay.it/itm/151832710355">Endmill da 3 mm</a> - 1 tagliente</td><td>7.000</td><td>2000</td><td>1000</td><td>0,7</td><td>2</td><td>Biadesivo su lato pellicola<figure>
+    
+        
+    
+
+    
+    <a href="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_forex.jpg">
+        <img src="&#x2F;wiki&#x2F;immagini&#x2F;trucioli_forex.jpg"/>
+    </a>
+    
+    
+    
+    <figcaption>Trucioli</figcaption>
+    
+</figure></td></tr>
+</tbody></table>
+<h3 id="pcb-basette-ramate-per-circuiti">PCB (basette ramate per circuiti)</h3>
+<table class='page-table'><thead><tr><th>Fresa</th><th>RPM</th><th>Velocità XY (mm/min)</th><th>Velocità Z (mm/min)</th><th>Incrocio (0.1 - 1.0 diam)</th><th>Passo in Z (mm)</th><th>Note</th></tr></thead><tbody>
+<tr><td>Bulino 0.2 mm - 30° per tracce</td><td>20.000</td><td>600</td><td>150</td><td>0,7</td><td>0,15</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+<tr><td>Da foro 0,8mm</td><td>20.000</td><td></td><td>500</td><td></td><td>2,5</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+<tr><td>Da foro 0,9mm</td><td>20.000</td><td></td><td>350</td><td></td><td>2,5</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+<tr><td>Da foro 0,9mm</td><td>20.000</td><td></td><td>200</td><td></td><td>1,2</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+<tr><td>Da taglio endmill 1,5mm</td><td>20.000</td><td>1000</td><td>500</td><td>0,5</td><td>0,5</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+<tr><td>Da taglio endmill 3 mm</td><td>20.000</td><td>1600</td><td>700</td><td>0,5</td><td>1,2</td><td>consumo elevato <br> <strong>aspiratore acceso</strong></td></tr>
+</tbody></table>
+<h2 id="carico-per-dente">Carico per dente</h2>
+<p><a href="https://www.onsrud.com/xdoc/feedspeeds">https://www.onsrud.com/xdoc/feedspeeds</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
