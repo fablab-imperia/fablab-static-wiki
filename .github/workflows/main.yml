@@ -11,7 +11,7 @@ jobs:
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@v0.16.1
         env:
-          # Target branch
-          PAGES_BRANCH: gh-pages
+          REPOSITORY: https://github.com/fablab-imperia/fablab-imperia.github.io.git
+          PAGES_BRANCH: master
           # Or if publishing to the same repo, use the automatic token
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.ZOLA_TOKEN }}
