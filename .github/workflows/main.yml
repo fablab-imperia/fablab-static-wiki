@@ -12,6 +12,6 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.16.1
         env:
           REPOSITORY: fablab-imperia/fablab-imperia.github.io
-          #PAGES_BRANCH: gh-pages
+          PAGES_BRANCH: master
           TOKEN: ${{ secrets.ZOLA_TOKEN }}
           #TOKEN: ${{ secrets.GITHUB_TOKEN }}
